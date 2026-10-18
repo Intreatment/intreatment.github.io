@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
 <title>Уже поздно или в самый раз? – материал к выпуску InTreatment</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,18 +19,7 @@
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#1B1A18; --cream:#22211F; --ink:#E6E2DC; --head:#F5F2ED; --muted:#A29D96;
-    --line:#3A3733; --mint:#2A3333; --beige:#332D27; --lav:#2D2A35;
-    --mint-ink:#B9D0D0; --lav-ink:#CFC6E6; --beige-ink:#E2CBB2;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#1B1A18; --cream:#22211F; --ink:#E6E2DC; --head:#F5F2ED; --muted:#A29D96;
-  --line:#3A3733; --mint:#2A3333; --beige:#332D27; --lav:#2D2A35;
-  --mint-ink:#B9D0D0; --lav-ink:#CFC6E6; --beige-ink:#E2CBB2;
-}
+
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
@@ -168,6 +158,16 @@ section:not(.hero) .wrap>p:not(.lede):not(.small){max-width:62ch}
 .cta a.fill{background:var(--bg);color:var(--head)}
 footer{padding:2rem 1.25rem;text-align:center;font-size:.85rem;color:var(--muted)}
 </style>
+<style>html{color-scheme:light}</style>
+<style>
+.listen{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.listen .l-lab{flex-basis:100%;font:400 13px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#6E6A64}
+.listen a{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;border:1px solid #2D2C2A;background:#fff;color:#2D2C2A;text-decoration:none;font:500 15px/1.2 "Helvetica Neue",Helvetica,Arial,sans-serif;transition:opacity .2s}
+.listen a:hover{opacity:.85}
+.listen a.l-vk{background:#2D2C2A;color:#fff}
+.listen a span{font-size:11px}
+.listen.center{justify-content:center}
+</style>
 </head>
 <body>
 
@@ -176,6 +176,7 @@ footer{padding:2rem 1.25rem;text-align:center;font-size:.85rem;color:var(--muted
     <p class="kicker">Материал к выпуску подкаста InTreatment</p>
     <h1>Уже поздно или в самый раз?</h1>
     <p class="lede">Разговор с психологом Инной Башковой, экзистенциальным терапевтом, о том, почему после 30–40 труднее решаться на новое. В этом файле вы найдете карту главных мыслей, разбор одного вашего желания и вопросы, которые можно забрать с собой.</p>
+    <div class="listen" style="margin:18px 0"><span class="l-lab">Слушать выпуск</span><a class="l-vk" href="https://vk.ru/wall-234396391_122" target="_blank" rel="noopener"><span>▶</span>ВКонтакте</a><a class="l-tg" href="https://t.me/truepsychologist/607" target="_blank" rel="noopener"><span>▶</span>Telegram</a></div>
     <div class="ways">
       <a href="#map">Посмотреть карту выпуска</a>
       <a href="#wish">Разобрать свое желание</a>

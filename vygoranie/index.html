@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
 <title>Когда тело говорит «стоп»</title>
 <meta name="description" content="Интерактивный конспект подкаста психологического центра InTreatment о выгорании, гиперответственности и восстановлении">
 <meta property="og:type" content="article">
@@ -39,18 +40,7 @@
   --gutter:clamp(20px,5vw,40px);
   --step--1:.8125rem; --step-0:1rem; --step-1:1.125rem; --step-2:1.5rem; --step-3:2.125rem; --step-4:clamp(2.4rem,6.4vw,4rem);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#1A1816; --bg-alt:#211F1C; --ink:#E9E5DF; --ink-strong:#F6F3EE; --muted:#A39D94; --line:#3A3632;
-    --mint:#27302F; --beige:#2F2A25; --lav:#2B2832; --tense:#D29A76; --calm:#94B8B3; --btn-bg:#F1EDE7; --btn-fg:#1A1816;
-    --cta-bg:#2A2724; --cta-fg:#F6F3EE; --cta-muted:#A39D94; --focus:#9FB3B3; color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#1A1816; --bg-alt:#211F1C; --ink:#E9E5DF; --ink-strong:#F6F3EE; --muted:#A39D94; --line:#3A3632;
-  --mint:#27302F; --beige:#2F2A25; --lav:#2B2832; --tense:#D29A76; --calm:#94B8B3; --btn-bg:#F1EDE7; --btn-fg:#1A1816;
-  --cta-bg:#2A2724; --cta-fg:#F6F3EE; --cta-muted:#A39D94; --focus:#9FB3B3; color-scheme:dark;
-}
+
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:var(--font-display);font-weight:400;color:var(--ink-strong);text-wrap:balance;margin:0;line-height:1.15}
@@ -320,6 +310,16 @@ section.block:nth-of-type(even) .summary{background:var(--bg)}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
 </style>
 
+<style>html{color-scheme:light}</style>
+<style>
+.listen{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.listen .l-lab{flex-basis:100%;font:400 13px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#6E6A64}
+.listen a{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;border:1px solid #2D2C2A;background:#fff;color:#2D2C2A;text-decoration:none;font:500 15px/1.2 "Helvetica Neue",Helvetica,Arial,sans-serif;transition:opacity .2s}
+.listen a:hover{opacity:.85}
+.listen a.l-vk{background:#2D2C2A;color:#fff}
+.listen a span{font-size:11px}
+.listen.center{justify-content:center}
+</style>
 </head>
 <body>
 <div class="progress" aria-hidden="true"><span id="bar"></span></div>
@@ -334,6 +334,7 @@ section.block:nth-of-type(even) .summary{background:var(--bg)}
     <h1>Когда тело говорит <em>«стоп»</em></h1>
     <p class="subtitle">Выгорание, гиперответственность и путь к восстановлению</p>
     <div class="tags"><span class="tag-pill c-b">Выгорание</span><span class="tag-pill c-l">Гиперответственность</span><span class="tag-pill c-m">Восстановление</span></div>
+    <div class="listen"><span class="l-lab">Слушать выпуск</span><a class="l-vk" href="https://vk.ru/wall-234396391_129" target="_blank" rel="noopener"><span>▶</span>ВКонтакте</a><a class="l-tg" href="https://t.me/truepsychologist/619" target="_blank" rel="noopener"><span>▶</span>Telegram</a></div>
     <p class="lead">Человек просыпается уже уставшим, собирает детей, отвечает на сообщения, едет на работу, принимает решения и решает чужие проблемы, а вечером у него не остается сил даже на близких. Когда появляется возможность отдохнуть, расслабиться не получается: в голове крутятся дела, рука тянется к телефону, плечи напряжены, и сон уже не восстанавливает, как раньше</p>
     <p class="pull pull-hero">Со стороны такой человек выглядит благополучным, успешным и ответственным, хотя внутри ему приходится прикладывать все больше усилий, чтобы держать прежний уровень</p>
     <div class="inside">

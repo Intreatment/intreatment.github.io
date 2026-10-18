@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
 <title>Подкаст InTreatment</title>
 <meta name="description" content="Интерактивные конспекты выпусков подкаста психологического центра InTreatment">
 <meta property="og:type" content="website">
@@ -21,9 +22,7 @@
   --gutter:clamp(20px,5vw,40px);
   padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 }
-@media (prefers-color-scheme: dark){
-  :root{--bg:#1A1816; --bg-alt:#211F1C; --ink:#E9E5DF; --ink-strong:#F6F3EE; --muted:#A39D94; --line:#3A3632; --mint:#27302F; --beige:#2F2A25; --lav:#2B2832; color-scheme:dark}
-}
+
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2{font-family:var(--font-display);font-weight:400;color:var(--ink-strong);margin:0;line-height:1.15;text-wrap:balance}
@@ -48,11 +47,22 @@ a{color:inherit}
 .ep .tag{font-size:.8125rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .ep h2{font-size:clamp(1.6rem,4vw,2.1rem)}
 .ep .sub{font-family:var(--font-display);font-style:italic;font-size:1.15rem;color:var(--ink)}
-.ep .go{font-weight:500;margin-top:4px}
+.ep .go{font-weight:500;margin-top:4px;color:var(--ink);text-decoration:none}
+.ep h2 a{color:inherit;text-decoration:none}
 .c-m{background:var(--mint)} .c-b{background:var(--beige)} .c-l{background:var(--lav)}
 .foot{padding-block:28px;border-top:1px solid var(--line)}
 .foot .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+<style>html{color-scheme:light}</style>
+<style>
+.listen{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.listen .l-lab{flex-basis:100%;font:400 13px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#6E6A64}
+.listen a{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;border:1px solid #2D2C2A;background:#fff;color:#2D2C2A;text-decoration:none;font:500 15px/1.2 "Helvetica Neue",Helvetica,Arial,sans-serif;transition:opacity .2s}
+.listen a:hover{opacity:.85}
+.listen a.l-vk{background:#2D2C2A;color:#fff}
+.listen a span{font-size:11px}
+.listen.center{justify-content:center}
 </style>
 </head>
 <body>
@@ -70,36 +80,40 @@ a{color:inherit}
 </section>
 <main class="list">
   <div class="wrap">
-    <a class="ep c-m" href="vygoranie/">
+    <div class="ep c-m">
       <span class="tag">Психосоматика</span>
-      <h2>Когда тело говорит «стоп»</h2>
+      <h2><a href="vygoranie/">Когда тело говорит «стоп»</a></h2>
       <p class="sub">Выгорание, гиперответственность и путь к восстановлению</p>
-      <span class="go">Открыть конспект →</span>
-    </a>
-    <a class="ep c-l" href="sbyvatsya/">
+      <a class="go" href="vygoranie/">Открыть конспект →</a>
+      <div class="listen" style="margin-top:6px"><a class="l-vk" href="https://vk.ru/wall-234396391_129" target="_blank" rel="noopener"><span>▶</span>ВКонтакте</a><a class="l-tg" href="https://t.me/truepsychologist/619" target="_blank" rel="noopener"><span>▶</span>Telegram</a></div>
+    </div>
+    <div class="ep c-l">
       <span class="tag">Самореализация</span>
-      <h2>Хочу сбываться</h2>
+      <h2><a href="sbyvatsya/">Хочу сбываться</a></h2>
       <p class="sub">Как отличить свое от чужого и сделать первый шаг</p>
-      <span class="go">Открыть конспект →</span>
-    </a>
-    <a class="ep c-b" href="pozdno/">
+      <a class="go" href="sbyvatsya/">Открыть конспект →</a>
+      <div class="listen" style="margin-top:6px"><a class="l-vk" href="https://vk.ru/wall-234396391_125" target="_blank" rel="noopener"><span>▶</span>ВКонтакте</a><a class="l-tg" href="https://t.me/truepsychologist/616" target="_blank" rel="noopener"><span>▶</span>Telegram</a></div>
+    </div>
+    <div class="ep c-b">
       <span class="tag">Перемены в жизни</span>
-      <h2>Уже поздно или в самый раз?</h2>
+      <h2><a href="pozdno/">Уже поздно или в самый раз?</a></h2>
       <p class="sub">Решиться на новое после 30–40</p>
-      <span class="go">Открыть конспект →</span>
-    </a>
-    <a class="ep c-l" href="shkola/">
+      <a class="go" href="pozdno/">Открыть конспект →</a>
+      <div class="listen" style="margin-top:6px"><a class="l-vk" href="https://vk.ru/wall-234396391_122" target="_blank" rel="noopener"><span>▶</span>ВКонтакте</a><a class="l-tg" href="https://t.me/truepsychologist/607" target="_blank" rel="noopener"><span>▶</span>Telegram</a></div>
+    </div>
+    <div class="ep c-l">
       <span class="tag">Родительство</span>
-      <h2>Скоро в школу</h2>
+      <h2><a href="shkola/">Скоро в школу</a></h2>
       <p class="sub">Как быть рядом с ребенком и не превращаться в контролера</p>
-      <span class="go">Открыть конспект →</span>
-    </a>
-    <a class="ep c-b" href="vydoh/">
+      <a class="go" href="shkola/">Открыть конспект →</a>
+      <div class="listen" style="margin-top:6px"><a class="l-vk" href="https://vk.ru/wall-234396391_107" target="_blank" rel="noopener"><span>▶</span>ВКонтакте</a><a class="l-tg" href="https://t.me/truepsychologist/584" target="_blank" rel="noopener"><span>▶</span>Telegram</a></div>
+    </div>
+    <div class="ep c-b">
       <span class="tag">Программа центра</span>
-      <h2>«Выдох»</h2>
+      <h2><a href="vydoh/">«Выдох»</a></h2>
       <p class="sub">Двенадцать недель индивидуальной работы с психологом при выгорании</p>
-      <span class="go">Подробнее о программе →</span>
-    </a>
+      <a class="go" href="vydoh/">Подробнее о программе →</a>
+    </div>
   </div>
 </main>
 <footer class="foot">

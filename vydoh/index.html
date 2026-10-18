@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
 <title>Выдох — 12-недельная программа при выгорании | InTreatment</title>
 <meta name="description" content="Индивидуальная терапевтическая программа InTreatment для тех, на ком многое держится: 12 недель работы с психологом онлайн.">
 <meta name="theme-color" content="#ffffff">
@@ -38,22 +39,7 @@
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#161514; --cream:#1d1c1a; --ink:#f3efe9; --text:#e8e4de;
-    --muted:rgba(232,228,222,.68); --line:rgba(255,255,255,.12); --soft:#272624;
-    --mint:#222b2b; --beige:#2a2622; --lavender:#27252d;
-    --action:#f3efe9; --action-text:#161514; --orbit-disc:#2a2927;
-    --deep:#0f0e0d; --focus:#e8e4de;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#161514; --cream:#1d1c1a; --ink:#f3efe9; --text:#e8e4de;
-  --muted:rgba(232,228,222,.68); --line:rgba(255,255,255,.12); --soft:#272624;
-  --mint:#222b2b; --beige:#2a2622; --lavender:#27252d;
-  --action:#f3efe9; --action-text:#161514; --orbit-disc:#2a2927;
-  --deep:#0f0e0d; --focus:#e8e4de;
-}
+
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--head-h) + 12px);-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
@@ -573,6 +559,7 @@ button{font:inherit;color:inherit}
   *,*::before,*::after{animation:none !important;transition-duration:.01ms !important;transition-delay:0s !important}
 }
 </style>
+<style>html{color-scheme:light}</style>
 </head>
 <body>
 <div class="page">

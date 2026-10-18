@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
 <title>Хочу сбываться</title>
 <meta name="description" content="Интерактивный конспект подкаста InTreatment о самореализации: что значит сбываться, как понять, что дело ваше, и что помогает сделать первый шаг">
 <meta property="og:type" content="article">
@@ -37,18 +38,7 @@
   --gutter:clamp(20px,5vw,40px);
   --step--1:.8125rem; --step-0:1rem; --step-1:1.125rem; --step-2:1.5rem; --step-3:2.125rem; --step-4:clamp(2.5rem,7vw,4.25rem);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#1A1816; --bg-alt:#211F1C; --ink:#E9E5DF; --ink-strong:#F6F3EE; --muted:#A39D94; --line:#3A3632;
-    --mint:#27302F; --beige:#2F2A25; --lav:#2B2832; --btn-bg:#F1EDE7; --btn-fg:#1A1816;
-    --cta-bg:#2A2724; --cta-fg:#F6F3EE; --cta-muted:#A39D94; --focus:#9FB3B3; color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#1A1816; --bg-alt:#211F1C; --ink:#E9E5DF; --ink-strong:#F6F3EE; --muted:#A39D94; --line:#3A3632;
-  --mint:#27302F; --beige:#2F2A25; --lav:#2B2832; --btn-bg:#F1EDE7; --btn-fg:#1A1816;
-  --cta-bg:#2A2724; --cta-fg:#F6F3EE; --cta-muted:#A39D94; --focus:#9FB3B3; color-scheme:dark;
-}
+
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:var(--font-display);font-weight:400;color:var(--ink-strong);text-wrap:balance;margin:0;line-height:1.15}
@@ -214,6 +204,16 @@ blockquote cite{font-style:normal;font-size:var(--step--1);color:var(--muted);le
 @media (prefers-reduced-motion: reduce){.ring-flow{animation:none}*{transition:none!important}}
 </style>
 
+<style>html{color-scheme:light}</style>
+<style>
+.listen{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.listen .l-lab{flex-basis:100%;font:400 13px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#6E6A64}
+.listen a{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;border:1px solid #2D2C2A;background:#fff;color:#2D2C2A;text-decoration:none;font:500 15px/1.2 "Helvetica Neue",Helvetica,Arial,sans-serif;transition:opacity .2s}
+.listen a:hover{opacity:.85}
+.listen a.l-vk{background:#2D2C2A;color:#fff}
+.listen a span{font-size:11px}
+.listen.center{justify-content:center}
+</style>
 </head>
 <body>
 <div class="progress" aria-hidden="true"><span id="bar"></span></div>
@@ -222,6 +222,7 @@ blockquote cite{font-style:normal;font-size:var(--step--1);color:var(--muted);le
   <div class="wrap">
     <p class="eyebrow">Подкаст InTreatment · Конспект выпуска</p>
     <h1>Хочу <em>сбываться</em></h1>
+    <div class="listen"><span class="l-lab">Слушать выпуск</span><a class="l-vk" href="https://vk.ru/wall-234396391_125" target="_blank" rel="noopener"><span>▶</span>ВКонтакте</a><a class="l-tg" href="https://t.me/truepsychologist/616" target="_blank" rel="noopener"><span>▶</span>Telegram</a></div>
     <p class="lead">Снаружи все благополучно: работа, зарплата, планы. А внутри что-то не дает покоя и хочется своего дела, проекта, идеи. Только непонятно, что именно, и почему-то все время откладывается. В этом выпуске разбираем, как отличить свое от чужого и как помочь себе сделать первый шаг</p>
     <div class="people">
       <div class="person"><div class="ava m">А</div><div><b>Анастасия Васильева</b><small>ведущая, сооснователь InTreatment</small></div></div>
