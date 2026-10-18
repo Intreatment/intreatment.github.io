@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Уже поздно или в самый раз? – материал к выпуску InTreatment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --cream:#FAF9F7; --ink:#2D2C2A; --head:#1A1816; --muted:#6B6761;
+  --line:#E6E1DA; --mint:#E2E9E9; --beige:#EFE9E3; --lav:#E7E4EE;
+  --mint-ink:#3F5757; --lav-ink:#4B4360; --beige-ink:#6A5440;
+  --serif:"Playfair Display", Georgia, "Times New Roman", serif;
+  --sans:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1B1A18; --cream:#22211F; --ink:#E6E2DC; --head:#F5F2ED; --muted:#A29D96;
+    --line:#3A3733; --mint:#2A3333; --beige:#332D27; --lav:#2D2A35;
+    --mint-ink:#B9D0D0; --lav-ink:#CFC6E6; --beige-ink:#E2CBB2;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1B1A18; --cream:#22211F; --ink:#E6E2DC; --head:#F5F2ED; --muted:#A29D96;
+  --line:#3A3733; --mint:#2A3333; --beige:#332D27; --lav:#2D2A35;
+  --mint-ink:#B9D0D0; --lav-ink:#CFC6E6; --beige-ink:#E2CBB2;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--head);line-height:1.15;margin:0}
+h2{font-size:clamp(1.8rem,4.2vw,2.5rem);line-height:1.2;margin-bottom:1rem}
+h3{font-size:1.3rem;margin-bottom:.5rem}
+p{margin:0 0 1em}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--head);outline-offset:3px;border-radius:4px}
+section{padding:clamp(3rem,8vw,5.5rem) 1.25rem}
+section.alt{background:var(--cream)}
+.wrap{max-width:880px;margin:0 auto}
+h2{max-width:30ch}
+.lede{margin:0}
+.wrap .block{margin-top:2.2rem}
+.lede{font-size:1.1rem;color:var(--muted);max-width:62ch}
+section:not(.hero) .wrap>p:not(.lede):not(.small){max-width:62ch}
+.small{font-size:.9rem;color:var(--muted)}
+.note{font-size:.88rem;color:var(--muted);border-left:2px solid var(--line);padding-left:.8rem;margin-top:1.2rem}
+
+/* hero */
+.hero{padding-top:clamp(3.5rem,10vw,7rem);padding-bottom:clamp(3rem,8vw,5rem)}
+.hero .kicker{font-size:.95rem;color:var(--muted);margin-bottom:1.4rem}
+.hero h1{font-size:clamp(2.6rem,8.5vw,5.2rem);font-weight:400;letter-spacing:-.01em;max-width:13ch}
+.hero .lede{margin-top:1.6rem}
+.ways{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
+.ways a{text-decoration:none;padding:.65rem 1.1rem;border:1px solid var(--line);border-radius:999px;font-size:.95rem;background:var(--bg)}
+.ways a:hover{border-color:var(--ink)}
+.pull{margin-top:3rem;background:var(--lav);color:var(--lav-ink);padding:1.4rem 1.6rem;border-radius:14px;font-family:var(--serif);font-size:1.25rem;line-height:1.45;max-width:36ch}
+.pull span{display:block;font-family:var(--sans);font-size:.85rem;margin-top:.7rem;opacity:.8}
+
+.tension{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:stretch;margin-top:0}
+.tension .pole{padding:1.2rem;border-radius:12px}
+.tension .a{background:var(--beige);color:var(--beige-ink)}
+.tension .b{background:var(--mint);color:var(--mint-ink)}
+.tension .mid{display:flex;align-items:center;justify-content:center;text-align:center;font-size:.85rem;color:var(--muted);max-width:14ch}
+.tension h3{color:inherit;font-size:1.15rem;text-align:center;margin-bottom:.8rem}
+
+/* map */
+.acc{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;align-items:start}
+.item{border:1px solid var(--line);border-radius:14px;background:var(--bg);overflow:hidden}
+.item.open{grid-column:1 / -1;border-color:var(--head)}
+.item>button{width:100%;text-align:left;background:none;border:0;padding:1.1rem 1.3rem;cursor:pointer;display:flex;justify-content:space-between;gap:1rem;align-items:flex-start}
+.item>button:hover{background:var(--cream)}
+.item .t{font-family:var(--serif);font-size:1.3rem;color:var(--head);line-height:1.25;display:block}
+.item .pm{flex:none;width:1.8rem;height:1.8rem;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--muted);margin-top:.15rem}
+.item.open .pm{background:var(--head);color:var(--bg);border-color:var(--head)}
+.body{display:none;padding:0 1.3rem 1.4rem}
+.item.open .body{display:block}
+.body blockquote{margin:.2rem 0 1.2rem;font-family:var(--serif);font-size:1.2rem;font-style:italic;color:var(--head);line-height:1.4}
+.body .grid{display:grid;grid-template-columns:3fr 2fr;gap:1.4rem;align-items:center}
+.body .lbl{font-size:.85rem;color:var(--muted);margin-bottom:.35rem;font-weight:500}
+.body .you{background:var(--mint);color:var(--mint-ink);border-radius:10px;padding:1rem 1.1rem}
+.body .you .lbl{color:inherit;opacity:.8}
+.body p{margin:0 0 .8em}
+.body .you p{margin:0}
+@media (max-width:680px){.acc{grid-template-columns:1fr}.body .grid{grid-template-columns:1fr}.tension{grid-template-columns:1fr}.tension .mid{max-width:none;padding:.2rem 0}}
+
+/* wizard */
+.wiz{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:clamp(1.3rem,4vw,2.4rem)}
+.progress{display:flex;gap:4px;margin-bottom:1.6rem}
+.progress i{flex:1;height:3px;border-radius:2px;background:var(--line)}
+.progress i.done{background:var(--head)}
+.step-n{font-size:.88rem;color:var(--muted);margin-bottom:.4rem}
+.wiz h3{font-size:1.45rem;margin-bottom:.4rem}
+.wiz .hint{color:var(--muted);font-size:.95rem;margin-bottom:1.1rem}
+.wiz textarea,.wiz input[type=text]{width:100%;font:inherit;color:var(--ink);background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:.8rem .9rem;resize:vertical}
+.wiz textarea{min-height:5.5rem}
+.wiz label.fld{display:block;font-size:.9rem;color:var(--muted);margin:.9rem 0 .35rem}
+.opts{display:grid;gap:.5rem}
+.opt{display:flex;gap:.7rem;align-items:flex-start;padding:.75rem .9rem;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:var(--bg)}
+.opt:hover{border-color:var(--muted)}
+.opt input{margin-top:.3rem;accent-color:var(--head)}
+.opt.sel{border-color:var(--head);background:var(--cream)}
+.nav{display:flex;justify-content:space-between;gap:.8rem;margin-top:1.6rem;flex-wrap:wrap}
+.btn{border:1px solid var(--head);background:var(--head);color:var(--bg);padding:.75rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.97rem}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn:disabled{opacity:.4;cursor:default}
+.reset{display:block;margin-top:1.2rem;background:none;border:0;padding:.3rem 0;color:var(--muted);font-size:.9rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.reset.armed{color:var(--head)}
+.result .mine{background:var(--cream);border-radius:12px;padding:1.1rem 1.2rem;margin:1rem 0 1.6rem}
+.result .mine p{margin:.2rem 0 .7rem}
+.result .mine b{font-weight:500;font-size:.85rem;color:var(--muted);display:block}
+.way{border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;margin-bottom:.7rem}
+.way.hi{border-color:var(--head);background:var(--lav);color:var(--lav-ink)}
+.way.hi h3{color:inherit}
+.way h3{font-size:1.15rem;margin-bottom:.3rem}
+.way p{margin:0;font-size:.97rem}
+.way .tag{display:inline-block;font-size:.8rem;margin-bottom:.4rem;opacity:.85}
+
+/* flip */
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.8rem}
+.flip{text-align:left;border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.25rem;background:var(--bg);cursor:pointer;min-height:9.5rem;display:flex;flex-direction:column;justify-content:space-between;gap:.8rem}
+.flip .front{font-family:var(--serif);font-size:1.2rem;color:var(--head);line-height:1.35}
+.flip .back{display:none;font-size:.97rem}
+.flip[aria-expanded="true"]{background:var(--beige);color:var(--beige-ink);border-color:transparent}
+.flip[aria-expanded="true"] .front{font-size:1rem;color:inherit;opacity:.75}
+.flip[aria-expanded="true"] .back{display:block}
+
+/* markers */
+.markers{list-style:none;padding:0;margin:0}
+.markers li{padding:1.1rem 0;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,15rem) 1fr;gap:1.2rem}
+.markers li:last-child{border-bottom:1px solid var(--line)}
+.markers strong{font-family:var(--serif);font-weight:500;font-size:1.15rem;color:var(--head);line-height:1.3}
+@media (max-width:620px){.markers li{grid-template-columns:1fr;gap:.3rem}}
+
+/* science */
+.sci-list{display:grid;gap:1rem}
+.sci-item{border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.3rem;background:var(--bg)}
+.sci-item .to{font-size:.85rem;color:var(--muted);margin-bottom:.3rem}
+.sci-item .ref{font-size:.82rem;color:var(--muted);margin:.6rem 0 0}
+
+/* open questions */
+.open{list-style:none;padding:0;margin:0;display:grid;gap:.6rem}
+.open li{padding:.9rem 1.1rem;background:var(--bg);border-radius:10px;border:1px solid var(--line)}
+
+/* keep */
+.keep{list-style:none;padding:0;margin:0}
+.keep li{border-top:1px solid var(--line);padding:1rem 0}
+.keep li:last-child{border-bottom:1px solid var(--line)}
+.keep .q{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start}
+.keep .q span{font-family:var(--serif);font-size:1.15rem;color:var(--head);line-height:1.4}
+.keep .q button{flex:none;border:1px solid var(--line);background:transparent;border-radius:999px;padding:.3rem .8rem;font-size:.85rem;cursor:pointer;color:var(--muted)}
+.keep textarea{display:none;width:100%;margin-top:.7rem;font:inherit;color:var(--ink);background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:.7rem .8rem;min-height:4.5rem}
+.keep li.open-note textarea{display:block}
+.copybox{width:100%;min-height:10rem;margin-top:1rem;font:inherit;font-size:.9rem;background:var(--cream);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.8rem}
+
+/* cta */
+.cta{background:var(--head);color:var(--bg)}
+.cta h2{color:var(--bg)}
+.cta p{color:var(--bg);opacity:.85}
+.cta .row{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2.2rem}
+.cta a{text-decoration:none;padding:.8rem 1.3rem;border-radius:999px;border:1px solid var(--bg);font-size:.97rem}
+.cta a.fill{background:var(--bg);color:var(--head)}
+footer{padding:2rem 1.25rem;text-align:center;font-size:.85rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">Материал к выпуску подкаста InTreatment</p>
+    <h1>Уже поздно или в самый раз?</h1>
+    <p class="lede">Разговор с психологом Инной Башковой, экзистенциальным терапевтом, о том, почему после 30–40 труднее решаться на новое. В этом файле вы найдете карту главных мыслей, разбор одного вашего желания и вопросы, которые можно забрать с собой.</p>
+    <div class="ways">
+      <a href="#map">Посмотреть карту выпуска</a>
+      <a href="#wish">Разобрать свое желание</a>
+      <a href="#keep">Забрать вопросы с собой</a>
+    </div>
+    <div class="pull">«Никто за вас не знает, что вам уже поздно. Это можете понять только вы».<span>Инна Башкова, из выпуска</span></div>
+  </div>
+</section>
+
+<section class="alt" id="question">
+  <div class="wrap">
+    <h2>Как понять, где мое настоящее «поздно», а где страх, чужой голос или желание, которое давно пора отпустить?</h2>
+    <h3 class="block" style="font-size:1.3rem">Две стороны одних и тех же ограничений</h3>
+    <p style="margin:0">Возраст, силы, время и семья могут останавливать человека, а могут стать тем, на что он опирается.</p>
+    <div class="tension" style="margin-top:1.4rem">
+      <div class="pole a"><h3>Ограничения останавливают</h3>Сил и времени становится меньше, появляется то, что жалко терять, приходится учитывать семью, и никто не гарантирует результат. Сомнений становится все больше, и человек остается на месте.</div>
+      <div class="mid">Переход от одного к другому происходит через признание и горевание</div>
+      <div class="pole b"><h3>Ограничения дают опору</h3>Становится ясно, на что тратить свое время. Появляются избирательность, решимость и энергия для того, что действительно важно.</div>
+    </div>
+  </div>
+</section>
+
+<section id="map">
+  <div class="wrap">
+    <h2>Карта выпуска</h2>
+    <p class="lede">8 главных мыслей выпуска. Нажмите на любую, чтобы прочитать, что об этом говорится в выпуске, и вопрос, который стоит задать себе.</p>
+    <div class="acc block" id="acc"></div>
+  </div>
+</section>
+
+<section class="alt" id="wish">
+  <div class="wrap">
+    <h2>Разбор одного желания</h2>
+    <p class="lede">Если вопрос «поздно или нет» уже мучает, с ним стоит начать разбираться: понять, что именно я хочу, что меня в этом привлекает и что пугает. Ниже эти вопросы собраны в последовательность. Они помогают рассмотреть желание подробнее и ничего не оценивают.</p>
+    <div class="wiz block" id="wiz"></div>
+    <p class="small" style="margin:.9rem 0 0">Ответы сохраняются только в этом браузере, и их никто не видит.</p>
+  </div>
+</section>
+
+<section id="voices">
+  <div class="wrap">
+    <h2>Чье это «поздно»?</h2>
+    <p class="lede">Фразы, которые мы слышим от других или говорим себе сами. Нажмите на карточку, чтобы увидеть, что за ней стоит.</p>
+    <div class="flips block" id="flips"></div>
+  </div>
+</section>
+
+<section class="alt" id="markers">
+  <div class="wrap">
+    <h2>Как распознать свое истинное желание</h2>
+    <p class="lede">Подлинное желание чаще всего чувствуется. Ниже несколько признаков, по которым его можно узнать.</p>
+    <ul class="markers block">
+      <li><strong>«Я не могу этого не делать»</strong><span>Появляется ощущение, что без этого я перестану быть собой и стану кем-то, лишь похожим на меня. Ум может еще не понимать, зачем это нужно, хотя все внутри уже развернуто в эту сторону.</span></li>
+      <li><strong>Желание возвращается</strong><span>Подлинное желание снова и снова подталкивает изнутри, даже если вы долго себя отговаривали.</span></li>
+      <li><strong>После решения становится легче</strong><span>Мучительнее всего бывает сам процесс принятия решения. Когда решение принято и совпадает с внутренним ощущением, приходит ясность, а действия появляются сами.</span></li>
+      <li><strong>Высвобождается энергия</strong><span>После подлинного решения часто появляются силы, даже если еще недавно было тяжело. Усталость при этом никуда не уходит, и одно другому не мешает.</span></li>
+      <li><strong>Если легче не стало</strong><span>Возможно, решение оказалось не совсем тем, которого вам хотелось, и его стоит пересмотреть.</span></li>
+    </ul>
+    <p class="note" style="margin-top:1.6rem">Прилив сил служит важным ориентиром, хотя и не единственным. Бывает, что подлинное решение приносит облегчение и тревогу одновременно. Главным признаком остается готовность пройти через трудное.</p>
+  </div>
+</section>
+
+<section id="science">
+  <div class="wrap">
+    <h2>Что об этом известно из исследований</h2>
+    <p class="lede">Несколько исследований, которые перекликаются с этими мыслями.</p>
+    <div class="sci-list block" id="sciList"></div>
+  </div>
+</section>
+
+<section class="alt" id="open">
+  <div class="wrap">
+    <h2>Вопросы, которые остаются открытыми</h2>
+    <p class="lede">Они естественно возникают после прослушивания, и к ним стоит вернуться в собственных размышлениях.</p>
+    <ul class="open block">
+      <li>Как договариваться с близкими, когда мое желание меняет жизнь всей семьи?</li>
+      <li>Как отличить настоящую трансформацию желания от самоуговора, который помогает лишь на время?</li>
+      <li>Что делать, если горевание о несбывшемся само превращается в болото?</li>
+      <li>Какие тревоги о переменах бывают в 20 лет и чем они отличаются от тревог после 30?</li>
+      <li>Как отличить реальное физиологическое «поздно» от страха, который прячется за возрастом?</li>
+      <li>Чем специалист-проводник помогает иначе, чем друзья, которые «верят в вас»?</li>
+    </ul>
+  </div>
+</section>
+
+<section id="keep">
+  <div class="wrap">
+    <h2>Вопросы, которые стоит сохранить</h2>
+    <p class="lede">Возвращайтесь к ним через месяц или через год. Ответы будут меняться, и это нормально, потому что понимание себя постоянно движется.</p>
+    <ul class="keep block" id="keepList"></ul>
+    <div class="block" style="display:flex;gap:.7rem;flex-wrap:wrap">
+      <button class="btn" id="copyBtn">Собрать мои записи в текст</button>
+    </div>
+    <textarea class="copybox" id="copyBox" hidden readonly aria-label="Ваши записи текстом"></textarea>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Продолжить разговор с психологом</h2>
+    <p class="lede" style="color:inherit;opacity:.85">Этот материал помогает задать себе вопросы, а искать ответы бывает легче вместе со специалистом. На платформе InTreatment можно найти психолога, который будет работать с вашей ситуацией.</p>
+    <div class="row">
+      <a class="fill" href="https://t.me/Intreatmentpsy_bot" target="_blank" rel="noopener">Подобрать психолога в Telegram</a>
+      <a href="https://intreatment.online" target="_blank" rel="noopener">Сайт InTreatment</a>
+    </div>
+  </div>
+</section>
+<footer>Материал к подкасту InTreatment. Не заменяет консультацию специалиста.</footer>
+
+<script>
+(function(){
+const store = {
+  get(){ try{ return JSON.parse(localStorage.getItem('itr-pozdno-v1')||'{}') }catch(e){ return {} } },
+  set(v){ try{ localStorage.setItem('itr-pozdno-v1', JSON.stringify(v)) }catch(e){} }
+};
+let state = store.get();
+state.wiz = state.wiz || {}; state.notes = state.notes || {};
+const save = () => store.set(state);
+const el = (t, cls, txt) => { const e=document.createElement(t); if(cls) e.className=cls; if(txt!=null) e.textContent=txt; return e; };
+
+/* ---------- map ---------- */
+const nodes = [
+ {id:'schet', title:'Невидимый счетчик',
+  quote:'«Уже поздно или в самый раз?»',
+  said:'После 30 у многих будто включается внутренний счетчик, как в фильме «Время», где время стало валютой. Он подсказывает, где «пора», а где уже «поздно». Время начинает ощущаться иначе: появляется понимание, что оно ограничено, и вопрос, как его использовать. Силы тоже оказываются ограниченными, и это хорошо чувствуется телом, например по тому, как по-разному переносится недосып в 20, 30 и 40 лет.',
+  you:'Когда вы в последний раз слышали внутри «поздно», чьим голосом это было сказано?'},
+ {id:'poteri', title:'Когда уже есть что терять',
+  quote:'«Я хочу вот на этом мешочке моего добра сидеть и ничего не растрачивать».',
+  said:'В 20 лет решаться проще, потому что терять почти нечего и можно пробовать разное. Позже любая перемена требует от чего-то отказаться: от устоявшегося порядка, части сил, привычного ритма, а решение приходится принимать с оглядкой на семью. Здесь соединяются две боли: результат никто не гарантирует, и любой выбор означает потерю. Тревога перед переменами бывает и в 20, только в молодости хочется чем-то обладать, а позже приходится от чего-то отказываться.',
+  you:'Что лежит в вашем «мешочке»? Какую его часть вы охраняете сильнее, чем она того стоит?'},
+ {id:'somn', title:'Сомнение: инструмент или болото',
+  quote:'«Сомнения нам позволяют найти подходящую форму».',
+  said:'Сомнения помогают найти форму желания и понять, что именно для него нужно. С возрастом страхи и сомнения становятся заметнее, хотя они были и раньше. У сомнений есть и обратная сторона: в них можно закопаться, как в болоте, надолго остаться на месте и прийти к сожалению о несделанном.',
+  you:'Помогли ли ваши сомнения за последний год что-то уточнить, или они повторяют одно и то же?'},
+ {id:'opora', title:'Ограничение как опора',
+  quote:'«Обнаружение ограничения возможностей позволяет делать то, что ты хочешь».',
+  said:'Ограниченность сил и времени дана нам как факт. Ее можно отрицать, и тогда человек стоит на месте. Признание ограничений освобождает: становится ясно, на что тратить то, что есть. Появляется опора на реальность, на которую можно встать и от которой можно оттолкнуться. Отсюда избирательность, которая отличает 30–40-летних от 20-летних: человек выбирает то, что для него действительно ценно, и готов за это платить. Опорой становится и опыт, если он осмыслен и переработан.',
+  you:'Какое свое ограничение вы до сих пор пытаетесь «отодвинуть»? И какой опыт есть у вас сейчас, которого не было в 20 лет?'},
+ {id:'gore', title:'Горевание, которое освобождает',
+  quote:'«Это больно, но это освобождает».',
+  said:'Горевать приходится и о небольших вещах, например о том, что сил становится меньше, чем раньше. Приходится горевать о несбывшемся и о том, чего уже не получить, например о родительской любви, которой не было в нужной форме. Тепло можно найти в других отношениях, хотя оно не заменит прежнего, и об этой разнице тоже приходится горевать. Горе освобождает место, в том числе для действия, а после принятия появляется удовольствие от того, что можешь, пусть и иначе, чем раньше.',
+  you:'О чем в вашей жизни вы пока не разрешили себе погоревать?'},
+ {id:'prizrak', title:'Призрак неисполненного желания',
+  quote:'«Человек прямо сейчас даже жизнь пропускает, гоняясь за этим призраком своего желания».',
+  said:'О несбывшихся желаниях говорят реже, чем об утратах, хотя держат они так же сильно. Пример из практики: детская мечта стать художником, вокруг которой годами копились переживания и обида на родителей. При разборе выяснилось, что желание уже потеряло актуальность и изначально было связано с чем-то другим. Такое желание похоже на призрак: у него нет тела, и все же оно притягивает внимание, пока жизнь идет мимо. С ним нужно как-то обойтись: отпустить, найти другую форму (например, иногда ходить рисовать как хобби) или реализовать всерьез и пойти учиться.',
+  you:'Какое желание у вас «ходит призраком»? Если спросить его, чего оно на самом деле хочет, что оно ответит?'},
+ {id:'podl', title:'Подлинное желание и решение',
+  quote:'«Если ты займешься чем-то другим, это будешь не ты».',
+  said:'Иногда решение зреет годами и уходит корнями в детство. Можно долго уговаривать себя, что желание чем-то заменимо, и какое-то время это действительно помогает, пока не становится ясно, что замена не работает. Подлинное желание узнается по ощущению «я не могу этого не делать», когда отказ от него означал бы отказ от себя. После такого решения часто высвобождается энергия, хотя усталость никуда не уходит. Если же после решения легче не становится, возможно, его стоит пересмотреть. Труднее всего дается внутренний процесс, а действия потом приходят сами.',
+  you:'О каком своем желании вы могли бы сказать «я не могу этого не делать»? А о каком только «было бы хорошо»?'},
+ {id:'nikto', title:'Никто снаружи не знает',
+  quote:'«Никто за вас не знает, что вам поздно».',
+  said:'Фраза «никогда не поздно» подходит не всем: что-то действительно бывает поздно, и это очень индивидуально. При этом решить за человека, поздно ему или нет, никто не может. Тот, кто говорит «ты справишься», не знает ваших реальных сил, а тот, кто говорит «уже поздно», чаще говорит о собственных ограничениях. Сравнивая себя с теми, кто «уже определился», мы видим только внешнюю сторону их жизни. Остается очная ставка с собой: ревизия, взгляд в будущее и решение о том, какую цену вы готовы платить. Решение, ответственность и последствия принадлежат вам, как и весь этот процесс, в котором много приятного.',
+  you:'Чье мнение о ваших ограничениях до сих пор влияет на вас? Что оно говорит о вас и что о том, кто его высказал?'}
+];
+const acc=document.getElementById('acc');
+nodes.forEach(n=>{
+  const it=el('div','item'); const b=el('button'); b.setAttribute('aria-expanded','false');
+  const tx=el('span'); tx.appendChild(el('span','t',n.title)); b.appendChild(tx);
+  const pm=el('span','pm','+'); pm.setAttribute('aria-hidden','true'); b.appendChild(pm);
+  const body=el('div','body');
+  body.appendChild(el('blockquote',null,n.quote));
+  const g=el('div','grid');
+  const c1=el('div'); c1.appendChild(el('div','lbl','Суть')); c1.appendChild(el('p',null,n.said));
+  const c2=el('div'); const you=el('div','you'); you.appendChild(el('div','lbl','Вопрос к себе')); you.appendChild(el('p',null,n.you)); c2.appendChild(you);
+  g.appendChild(c1); g.appendChild(c2); body.appendChild(g);
+  b.addEventListener('click',()=>{ const o=it.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false'); pm.textContent=o?'−':'+'; if(o) it.scrollIntoView({block:'nearest'}); });
+  it.appendChild(b); it.appendChild(body); acc.appendChild(it);
+});
+
+/* ---------- wizard ---------- */
+const steps=[
+ {k:'name', type:'text', title:'Как бы вы назвали это желание?', hint:'Это может быть то, к чему вы годами возвращаетесь со словами «не сейчас» или «уже поздно». Достаточно одной фразы.', ph:'Например: сменить профессию, переехать, начать рисовать'},
+ {k:'age', type:'radio', title:'Как давно оно с вами?', hint:'Некоторые желания зреют годами, а корнями уходят в детство.',
+  opts:['Меньше года','Несколько лет','Больше десяти лет','С детства']},
+ {k:'what', type:'text', title:'Что именно вы в этом хотите?', hint:'Одного «хочу» здесь мало. Попробуйте описать, что стоит за желанием: процесс, признание, свобода, близость, ощущение себя, другой ритм жизни. Бывает, что мечта стать художником оказывается связана вовсе не с живописью.', ph:'Я хочу в этом…', long:true},
+ {k:'pull', type:'two', title:'Что вас в этом привлекает и что пугает?', hint:'Чтобы разобраться с желанием, его полезно детализировать, исследовать и понаблюдать за ним.', a:'Привлекает', b:'Пугает'},
+ {k:'let', type:'radio', title:'Представьте, что вы окончательно решили: этого не будет. Что приходит первым?', hint:'Постарайтесь заметить первую реакцию, даже если она кажется неправильной.',
+  opts:['Облегчение, как будто сняли груз','Тихая грусть и спокойствие','Острая боль: это буду уже не я','Досада, что снова об этом думаю','Пока не могу понять']},
+ {k:'late', type:'check', title:'Из чего сделано ваше «поздно»?', hint:'Можно выбрать несколько вариантов. Что-то действительно бывает поздно, и где проходит ваша граница, знаете только вы.',
+  opts:['Реальные ограничения тела или здоровья','Время, которое нужно, чтобы это вырастить','Деньги и другие ресурсы','Семья и договоренности с близкими','Чьи-то слова о моем возрасте','Страх, что не получится','Сравнение с теми, кто «уже определился»']},
+ {k:'price', type:'radio', title:'Если выбрать это, чем придется заплатить и готовы ли вы к этому?', hint:'Любой выбор означает отказ от чего-то. Подумайте о цене конкретно: время, деньги, привычный порядок, часть другой мечты.',
+  opts:['Готов(а) заплатить эту цену','Пока не готов(а)','Не понимаю, какая будет цена'], extra:'От чего придется отказаться'}
+];
+let cur = Math.min(state.wiz._step||0, steps.length);
+const wiz=document.getElementById('wiz');
+function makeReset(){
+  const b=el('button','reset','Сбросить ответы'); let armed=false;
+  b.addEventListener('click',()=>{
+    if(!armed){ armed=true; b.textContent='Все ответы будут удалены. Нажмите еще раз, чтобы подтвердить'; b.classList.add('armed'); setTimeout(()=>{ if(armed){ armed=false; b.textContent='Сбросить ответы'; b.classList.remove('armed'); } },5000); return; }
+    state.wiz={}; cur=0; save(); renderWiz(); wiz.scrollIntoView({block:'start'});
+  });
+  return b;
+}
+function renderWiz(){
+  wiz.innerHTML='';
+  if(cur>=steps.length){ renderResult(); return; }
+  const s=steps[cur], v=state.wiz;
+  const pr=el('div','progress'); steps.forEach((_,i)=>{ const b=el('i'); if(i<=cur) b.className='done'; pr.appendChild(b); }); wiz.appendChild(pr);
+  wiz.appendChild(el('div','step-n',`Вопрос ${cur+1} из ${steps.length}`));
+  wiz.appendChild(el('h3',null,s.title)); wiz.appendChild(el('p','hint',s.hint));
+  if(s.type==='text'){ const t=el(s.long?'textarea':'input'); if(!s.long) t.type='text'; t.placeholder=s.ph||''; t.value=v[s.k]||''; t.setAttribute('aria-label',s.title); t.addEventListener('input',()=>{v[s.k]=t.value; save();}); wiz.appendChild(t); }
+  if(s.type==='two'){ ['a','b'].forEach(x=>{ const lb=el('label','fld',s[x]); const t=el('textarea'); t.id='f'+x; lb.htmlFor=t.id; t.value=v[s.k+x]||''; t.addEventListener('input',()=>{v[s.k+x]=t.value; save();}); wiz.appendChild(lb); wiz.appendChild(t); }); }
+  if(s.type==='radio'||s.type==='check'){ const box=el('div','opts'); box.setAttribute('role', s.type==='radio'?'radiogroup':'group');
+    s.opts.forEach((o,i)=>{ const lb=el('label','opt'); const inp=el('input'); inp.type=s.type==='radio'?'radio':'checkbox'; inp.name='q'+s.k;
+      const selected = s.type==='radio' ? v[s.k]===i : (v[s.k]||[]).includes(i);
+      inp.checked=selected; if(selected) lb.classList.add('sel');
+      inp.addEventListener('change',()=>{ if(s.type==='radio'){ v[s.k]=i; } else { const a=new Set(v[s.k]||[]); inp.checked?a.add(i):a.delete(i); v[s.k]=[...a]; } save(); renderWiz(); });
+      lb.appendChild(inp); lb.appendChild(el('span',null,o)); box.appendChild(lb); });
+    wiz.appendChild(box);
+    if(s.extra){ const lb=el('label','fld',s.extra); const t=el('textarea'); t.id='fx'; lb.htmlFor='fx'; t.value=v[s.k+'x']||''; t.addEventListener('input',()=>{v[s.k+'x']=t.value; save();}); wiz.appendChild(lb); wiz.appendChild(t); }
+  }
+  const nav=el('div','nav'); const back=el('button','btn ghost','Назад'); back.disabled=cur===0; back.addEventListener('click',()=>{cur--; v._step=cur; save(); renderWiz();});
+  const next=el('button','btn', cur===steps.length-1?'Посмотреть итог':'Дальше'); next.addEventListener('click',()=>{cur++; v._step=cur; save(); renderWiz(); wiz.scrollIntoView({block:'start'});});
+  nav.appendChild(back); nav.appendChild(next); wiz.appendChild(nav);
+  if(Object.keys(v).some(k=>k!=='_step')) wiz.appendChild(makeReset());
+}
+const ways=[
+ {id:'let', t:'Отпустить и погоревать', d:'Признать, что это желание не исполнится или уже не нужно, и позволить себе о нем горевать. Так освобождается место для других желаний и для жизни, которая идет сейчас.'},
+ {id:'form', t:'Найти другую форму', d:'Понять, что именно вы хотите в этом желании, и найти для этого другой способ. Мечта о живописи может стать хобби, а желание побыть рядом с младенцем может воплотиться в волонтерстве. Другая форма не равна исходной, и об этой разнице тоже приходится горевать.'},
+ {id:'do', t:'Реализовать всерьез', d:'Если желание не отпускает и вы готовы платить за него цену, можно принять решение. Действия после этого обычно приходят сами. Проверить решение можно по тому, стало ли вам легче.'},
+ {id:'look', t:'Продолжать разбираться', d:'Если ответы пока не складываются, это тоже честный итог. К пониманию себя приходится возвращаться снова и снова. Направить взгляд на себя в одиночку обычно сложно, и здесь может помочь специалист.'}
+];
+function suggest(v){
+  const s=new Set();
+  if(v.let===0) s.add('let');
+  if(v.let===1) { s.add('form'); s.add('let'); }
+  if(v.let===2) s.add(v.price===0?'do':'look');
+  if(v.let===3) { s.add('form'); s.add('look'); }
+  if(v.let===4 || v.let==null) s.add('look');
+  if(v.price===2) s.add('look');
+  if((v.late||[]).includes(0) && v.let!==2) s.add('let');
+  return s;
+}
+function renderResult(){
+  const v=state.wiz; const r=el('div','result');
+  r.appendChild(el('h3',null,'Ваше желание подробнее'));
+  const mine=el('div','mine');
+  const add=(lbl,val)=>{ if(!val) return; mine.appendChild(el('b',null,lbl)); mine.appendChild(el('p',null,val)); };
+  add('Желание', v.name); add('С вами', v.age!=null?steps[1].opts[v.age]:''); add('Что именно я в этом хочу', v.what);
+  add('Привлекает', v.pulla); add('Пугает', v.pullb); add('Если отказаться', v.let!=null?steps[4].opts[v.let]:'');
+  add('Мое «поздно» сделано из', (v.late||[]).map(i=>steps[5].opts[i]).join('; ')); add('Цена', [v.price!=null?steps[6].opts[v.price]:'', v.pricex].filter(Boolean).join('. '));
+  if(!mine.children.length) mine.appendChild(el('p',null,'Вы пока не ответили ни на один вопрос. Вернитесь назад, отвечать можно коротко.'));
+  r.appendChild(mine);
+  r.appendChild(el('p',null,'С желанием, которое не дает покоя, нужно как-то обойтись. Ниже четыре способа, и выделены те, к которым по вашим ответам стоит присмотреться в первую очередь. Выделение служит подсказкой, и окончательный вывод остается за вами.'));
+  const hi=suggest(v);
+  ways.forEach(w=>{ const d=el('div','way'+(hi.has(w.id)?' hi':'')); if(hi.has(w.id)) d.appendChild(el('span','tag','Стоит присмотреться')); d.appendChild(el('h3',null,w.t)); d.appendChild(el('p',null,w.d)); r.appendChild(d); });
+  if((v.late||[]).some(i=>i===4||i===6)) r.appendChild(el('p','note','Среди того, из чего сделано ваше «поздно», есть чужие слова или сравнение с другими. Другие люди обычно говорят исходя из своего опыта и своих ограничений, а то, как устроена чужая «определенность» изнутри, мы можем только представлять.'));
+  const nav=el('div','nav'); const back=el('button','btn ghost','Изменить ответы'); back.addEventListener('click',()=>{cur=0; v._step=0; save(); renderWiz();});
+  nav.appendChild(back); r.appendChild(nav); r.appendChild(makeReset());
+  wiz.appendChild(r);
+}
+renderWiz();
+
+/* ---------- flip cards ---------- */
+const flips=[
+ {f:'«В твоем возрасте этим уже не занимаются»', b:'Другие обычно говорят исходя из своего опыта, и тот, кто говорит «поздно», чаще сталкивается со своими ограничениями, чем с вашими.'},
+ {f:'«Ты сильная, ты справишься»', b:'Поддержка ценна, хотя другой и не знает о ваших реальных возможностях. Со стороны видно, что вы уже смогли, а о своих силах больше всех знаете вы сами.'},
+ {f:'«Все вокруг уже определились, а я нет»', b:'Мы видим, как чужая жизнь выглядит снаружи, а о том, как она устроена внутри, можем только догадываться.'},
+ {f:'«Никогда не поздно»', b:'Что-то действительно бывает поздно, и эта формула подходит не каждому: для одного человека что-то уже поздно, для другого в самый раз.'},
+ {f:'«Я уже не могу столько, как раньше»', b:'Этому хочется сопротивляться. Но об этом важно погоревать. Когда все же удается это принять, оплакать, появляются опора и даже удовольствие от того, что вы можете, пусть и иначе, чем раньше.'},
+ {f:'«Надо было раньше»', b:'Что-то случится, а что-то нет. Мы правда о чем-то пожалеем. Важно дать этому место, но не закапываться в сожалениях: «Мне очень жаль, что не случилось важное, я грущу. Но случилось что-то другое».'}
+];
+const fb=document.getElementById('flips');
+flips.forEach(x=>{ const b=el('button','flip'); b.setAttribute('aria-expanded','false');
+  b.appendChild(el('span','front',x.f)); b.appendChild(el('span','back',x.b));
+  b.addEventListener('click',()=>b.setAttribute('aria-expanded', b.getAttribute('aria-expanded')==='true'?'false':'true')); fb.appendChild(b); });
+
+/* ---------- science ---------- */
+const sci=[
+ {to:'К мыслям «Невидимый счетчик» и «Ограничение как опора»', t:'Оставшееся время меняет приоритеты', d:'Согласно теории социоэмоциональной избирательности Лоры Карстенсен, пока будущее кажется открытым, люди стремятся накапливать знания, контакты и возможности. Когда время ощущается ограниченным, на первый план выходит эмоционально значимое. Решающую роль здесь играет восприятие оставшегося времени, и возраст влияет на него лишь отчасти. Отсюда и избирательность в том, на что тратить себя.', r:'Carstensen, L. L. (2006). The influence of a sense of time on human development. Science, 312(5782).'},
+ {to:'К мысли «Когда уже есть что терять»', t:'Почему так трудно рисковать тем, что есть', d:'В поведенческой экономике описано неприятие потерь: потеря переживается сильнее, чем равное по размеру приобретение. Из-за этого люди склонны сохранять привычное положение дел, даже когда перемена в целом выгодна. Поэтому так хочется сидеть на «мешочке своего добра» и ничего из него не тратить.', r:'Kahneman, D., & Tversky, A. (1979). Prospect theory. Econometrica, 47(2). Samuelson, W., & Zeckhauser, R. (1988). Status quo bias in decision making. Journal of Risk and Uncertainty, 1.'},
+ {to:'К мыслям «Сомнение» и «Никто снаружи не знает»', t:'О чем жалеют в долгой перспективе', d:'Томас Гилович и Виктория Медвек показали, что в краткосрочной перспективе люди чаще сожалеют о совершенных действиях, а оглядываясь на прожитую жизнь, чаще жалеют о несделанном. Этот результат не призывает решаться на все подряд и лишь напоминает, что бездействие тоже является выбором со своей ценой.', r:'Gilovich, T., & Medvec, V. H. (1995). The experience of regret: What, when, and why. Psychological Review, 102(2).'},
+ {to:'Ко всем мыслям', t:'Экзистенциальная рамка', d:'Ирвин Ялом описывал конечность и ответственность за свой выбор как данности человеческого существования и писал, что решение трудно прежде всего потому, что требует отказа от альтернатив. Все мысли этой страницы так или иначе касаются того, как принять ограничение, пережить отказ и признать, что решение остается за вами.', r:'Yalom, I. D. (1980). Existential Psychotherapy. Basic Books.'}
+];
+const sl=document.getElementById('sciList');
+sci.forEach(s=>{ const d=el('div','sci-item'); d.appendChild(el('div','to',s.to)); d.appendChild(el('h3',null,s.t)); d.appendChild(el('p',null,s.d)); d.lastChild.style.margin='0'; d.appendChild(el('p','ref',s.r)); sl.appendChild(d); });
+
+/* ---------- keep ---------- */
+const keepQ=[
+ 'Что именно стоит за моим желанием?',
+ 'Что меня в этом привлекает и что пугает?',
+ 'Где проходит мое собственное «поздно»?',
+ 'Чей голос говорит мне, что уже поздно?',
+ 'От чего мне придется отказаться и готов(а) ли я платить эту цену?',
+ 'О чем мне пора позволить себе погоревать?',
+ 'Какое мое желание ходит призраком и что я хочу с ним сделать: отпустить, изменить форму или исполнить?',
+ 'О чем я могу сказать: «я не могу этого не делать»?',
+ 'Стало ли мне легче после последнего решения?'
+];
+const kl=document.getElementById('keepList');
+keepQ.forEach((q,i)=>{ const li=el('li'); const row=el('div','q'); row.appendChild(el('span',null,q));
+  const b=el('button',null, state.notes[i]?'Моя запись':'Записать'); const t=el('textarea'); t.setAttribute('aria-label','Запись к вопросу: '+q); t.value=state.notes[i]||'';
+  if(state.notes[i]) li.classList.add('open-note');
+  b.addEventListener('click',()=>{ li.classList.toggle('open-note'); if(li.classList.contains('open-note')) t.focus(); });
+  t.addEventListener('input',()=>{ state.notes[i]=t.value; save(); b.textContent=t.value?'Моя запись':'Записать'; });
+  row.appendChild(b); li.appendChild(row); li.appendChild(t); kl.appendChild(li); });
+document.getElementById('copyBtn').addEventListener('click',()=>{
+  const v=state.wiz; const lines=['Уже поздно или в самый раз? – мои записи',''];
+  if(v.name){ lines.push('Желание: '+v.name); if(v.what) lines.push('Что именно я хочу: '+v.what); if(v.pulla) lines.push('Привлекает: '+v.pulla); if(v.pullb) lines.push('Пугает: '+v.pullb); if(v.pricex) lines.push('Цена: '+v.pricex); lines.push(''); }
+  keepQ.forEach((q,i)=>{ if(state.notes[i]){ lines.push(q); lines.push(state.notes[i]); lines.push(''); } });
+  const box=document.getElementById('copyBox'); box.hidden=false;
+  box.value = lines.length>2 ? lines.join('\n') : 'Пока нет записей. Ответьте на вопросы разбора или добавьте записи к вопросам выше.';
+  box.focus(); box.select();
+  try{ navigator.clipboard && navigator.clipboard.writeText(box.value).catch(()=>{}); }catch(e){}
+});
+})();
+</script>
+</body>
+</html>

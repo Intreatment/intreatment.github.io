@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Подкаст InTreatment</title>
+<meta name="description" content="Интерактивные конспекты выпусков подкаста психологического центра InTreatment">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Конспекты подкаста InTreatment">
+<meta property="og:description" content="Главные идеи выпусков, практики и вопросы себе">
+<meta property="og:locale" content="ru_RU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+:root{
+  --bg:#FFFFFF; --bg-alt:#FAF9F7; --ink:#2D2C2A; --ink-strong:#1A1816; --muted:#6E6A64; --line:#E6E1DA;
+  --mint:#E2E9E9; --beige:#EFE9E3; --lav:#E7E4EE;
+  --font-display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body:"Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --gutter:clamp(20px,5vw,40px);
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#1A1816; --bg-alt:#211F1C; --ink:#E9E5DF; --ink-strong:#F6F3EE; --muted:#A39D94; --line:#3A3632; --mint:#27302F; --beige:#2F2A25; --lav:#2B2832; color-scheme:dark}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:var(--font-display);font-weight:400;color:var(--ink-strong);margin:0;line-height:1.15;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--muted);outline-offset:3px;border-radius:8px}
+.wrap{max-width:calc(720px + 2*var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
+.top{padding-block:clamp(28px,5vw,48px) 0}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:clamp(16px,4vw,32px);border-bottom:1px solid var(--line)}
+.logo{display:inline-flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink-strong);line-height:1}
+.logo-word{font-family:var(--font-display);font-weight:500;font-size:1.6rem}
+.logo-sub{font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.note{font-size:.8125rem;color:var(--muted)}
+.hero{padding-block:clamp(32px,6vw,56px)}
+.hero .wrap{display:grid;gap:16px}
+.hero h1{font-size:clamp(2.2rem,6vw,3.5rem)}
+.lead{font-size:1.125rem}
+.list{padding-block:0 clamp(48px,8vw,80px)}
+.list .wrap{display:grid;gap:16px}
+.ep{display:grid;gap:10px;padding:clamp(22px,4vw,32px);border-radius:16px;text-decoration:none;color:var(--ink);transition:transform .2s}
+.ep:hover{transform:translateY(-2px)}
+.ep .tag{font-size:.8125rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ep h2{font-size:clamp(1.6rem,4vw,2.1rem)}
+.ep .sub{font-family:var(--font-display);font-style:italic;font-size:1.15rem;color:var(--ink)}
+.ep .go{font-weight:500;margin-top:4px}
+.c-m{background:var(--mint)} .c-b{background:var(--beige)} .c-l{background:var(--lav)}
+.foot{padding-block:28px;border-top:1px solid var(--line)}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="https://intreatment.online" target="_blank" rel="noopener" aria-label="InTreatment"><span class="logo-word">InTreatment</span><span class="logo-sub">психологический центр</span></a>
+    <p class="note">Конспекты подкаста</p>
+  </div>
+</header>
+<section class="hero">
+  <div class="wrap">
+    <h1>Конспекты выпусков</h1>
+    <p class="lead">Главные идеи разговоров с психологами центра, практики и вопросы себе, к которым можно возвращаться</p>
+  </div>
+</section>
+<main class="list">
+  <div class="wrap">
+    <a class="ep c-m" href="vygoranie/">
+      <span class="tag">Психосоматика</span>
+      <h2>Когда тело говорит «стоп»</h2>
+      <p class="sub">Выгорание, гиперответственность и путь к восстановлению</p>
+      <span class="go">Открыть конспект →</span>
+    </a>
+    <a class="ep c-l" href="sbyvatsya/">
+      <span class="tag">Самореализация</span>
+      <h2>Хочу сбываться</h2>
+      <p class="sub">Как отличить свое от чужого и сделать первый шаг</p>
+      <span class="go">Открыть конспект →</span>
+    </a>
+    <a class="ep c-b" href="pozdno/">
+      <span class="tag">Перемены в жизни</span>
+      <h2>Уже поздно или в самый раз?</h2>
+      <p class="sub">Решиться на новое после 30–40</p>
+      <span class="go">Открыть конспект →</span>
+    </a>
+    <a class="ep c-l" href="shkola/">
+      <span class="tag">Родительство</span>
+      <h2>Скоро в школу</h2>
+      <p class="sub">Как быть рядом с ребенком и не превращаться в контролера</p>
+      <span class="go">Открыть конспект →</span>
+    </a>
+    <a class="ep c-b" href="vydoh/">
+      <span class="tag">Программа центра</span>
+      <h2>«Выдох»</h2>
+      <p class="sub">Двенадцать недель индивидуальной работы с психологом при выгорании</p>
+      <span class="go">Подробнее о программе →</span>
+    </a>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap"><span class="note">Подкаст психологического центра InTreatment</span><a class="note" href="https://t.me/Intreatmentpsy_bot" target="_blank" rel="noopener">Записаться в Telegram-боте</a></div>
+</footer>
+</body>
+</html>

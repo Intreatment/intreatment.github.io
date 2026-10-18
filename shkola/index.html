@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Скоро в школу — конспект подкаста InTreatment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#ffffff;
+    --cream:#faf9f7;
+    --ink:#1a1816;
+    --graphite:#2d2c2a;
+    --graphite2:#252423;
+    --muted:rgba(37,36,35,.62);
+    --hairline:rgba(0,0,0,.1);
+    --divider:#d8d8d8;
+    --mint:#e2e9e9;
+    --beige:#efe9e3;
+    --lavender:#e7e4ee;
+    --plate:#f4f4f4;
+    --section-black:#0c0c0c;
+    --serif:'Playfair Display', Georgia, serif;
+    --sans:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --max:720px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-font-smoothing:antialiased;}
+  body{margin:0; background:var(--white); color:var(--graphite); font-family:var(--sans); line-height:1.65; font-size:17px;}
+  a{color:var(--graphite);}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  /* ---------- TOP BAR (site signature) ---------- */
+  .topbar{border-bottom:1px solid var(--hairline); padding:18px 0;}
+  .topbar .wrap{text-align:center;}
+  .topbar .logo{
+    font-family:var(--sans); font-size:11px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--graphite2); font-weight:700;
+  }
+
+  /* ---------- HERO (cream band, like site's hero) ---------- */
+  header.masthead{background:var(--cream); padding:52px 0 44px; text-align:center; border-bottom:1px solid var(--hairline);}
+  .eyebrow{
+    font-family:var(--sans); text-transform:uppercase; letter-spacing:.18em;
+    font-size:11px; color:var(--muted); margin-bottom:20px;
+  }
+  .eyebrow b{color:var(--ink); font-weight:700;}
+  h1.title{
+    font-family:var(--serif); font-weight:500; text-transform:uppercase;
+    font-size:clamp(30px,6vw,44px); line-height:1.18;
+    margin:0 0 16px; letter-spacing:.005em; color:var(--ink);
+  }
+  .subtitle{font-size:16.5px; color:var(--muted); max-width:480px; margin:0 auto 28px; font-weight:300;}
+
+  .chip-row{display:flex; justify-content:center; gap:10px; flex-wrap:wrap;}
+  .chip{
+    display:inline-flex; align-items:center; padding:8px 18px; border-radius:20px;
+    font-family:var(--sans); font-size:11.5px; letter-spacing:.05em; text-transform:uppercase;
+    font-weight:700; color:var(--graphite);
+  }
+  .chip.c-mint{background:var(--mint);}
+  .chip.c-beige{background:var(--beige);}
+  .chip.c-lav{background:var(--lavender);}
+
+  /* ---------- LEAD ---------- */
+  .lead{padding:40px 0 6px;}
+  .lead p{font-size:18.5px; line-height:1.72; color:var(--graphite); margin:0;}
+  .lead p::first-letter{
+    font-family:var(--serif); font-size:56px; font-weight:500; float:left;
+    line-height:0.8; padding:5px 9px 0 0; color:var(--ink);
+  }
+
+  /* ---------- TOC (mint card, timeline of circles) ---------- */
+  nav.toc{margin:44px 0 8px; padding:28px 30px 10px; background:var(--mint); border-radius:4px;}
+  nav.toc .toc-label{font-size:11px; text-transform:uppercase; letter-spacing:.16em; color:var(--muted); margin-bottom:16px;}
+  nav.toc ol{list-style:none; margin:0; padding:0; position:relative;}
+  nav.toc ol::before{content:""; position:absolute; left:18px; top:18px; bottom:18px; width:1px; background:rgba(0,0,0,.14);}
+  nav.toc li{display:flex; align-items:center; gap:16px; padding:10px 0; position:relative; z-index:1;}
+  nav.toc .badge{
+    width:36px; height:36px; border-radius:50%; background:var(--white); color:var(--ink);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    font-family:var(--serif); font-style:italic; font-weight:500; font-size:14.5px;
+  }
+  nav.toc a{color:var(--ink); text-decoration:none; font-size:15px;}
+  nav.toc a:hover{color:var(--graphite2);}
+
+  /* ---------- SECTIONS ---------- */
+  section.chapter{padding:52px 0 8px; border-top:1px solid var(--hairline); margin-top:12px;}
+  section.chapter:first-of-type{border-top:none;}
+  .chapter-head{display:flex; align-items:center; gap:18px; margin-bottom:26px;}
+  .chapter-num{
+    width:46px; height:46px; border-radius:50%; background:var(--white); border:1.4px solid var(--ink);
+    color:var(--ink); display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    font-family:var(--serif); font-style:italic; font-weight:500; font-size:19px;
+  }
+  h2.chapter-title{
+    font-family:var(--serif); font-weight:500; text-transform:uppercase; font-size:21px;
+    line-height:1.22; margin:0; letter-spacing:.005em; color:var(--section-black);
+  }
+  h3.sub{
+    font-family:var(--sans); font-weight:700; font-size:13px; text-transform:uppercase;
+    letter-spacing:.09em; color:var(--graphite2); margin:30px 0 14px;
+  }
+  .chapter p{margin:0 0 16px; color:var(--graphite);}
+  .chapter ul{margin:0 0 20px; padding-left:0; list-style:none;}
+  .chapter ul li{position:relative; padding-left:20px; margin-bottom:12px; color:var(--graphite);}
+  .chapter ul li::before{content:"–"; position:absolute; left:0; color:var(--muted);}
+  .chapter ul li b, .chapter ul li strong{color:var(--ink); font-weight:700;}
+  .sub-note{color:var(--muted); font-size:15px;}
+
+  /* ---------- STEPS (timeline, mint badges) ---------- */
+  .steps{list-style:none; margin:0 0 22px; padding:0; position:relative;}
+  .steps::before{content:""; position:absolute; left:18px; top:4px; bottom:24px; width:1px; background:var(--hairline);}
+  .steps li{display:flex; gap:18px; margin-bottom:20px; position:relative; z-index:1;}
+  .steps .badge{
+    width:36px; height:36px; border-radius:50%; background:var(--mint); color:var(--ink);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    font-family:var(--serif); font-style:italic; font-weight:500; font-size:15px;
+  }
+  .steps .step-body{padding-top:5px;}
+  .steps .step-body b{display:block; font-weight:700; margin-bottom:4px; color:var(--ink);}
+
+  /* ---------- QUOTES (soft pastel card, rotates per chapter) ---------- */
+  blockquote.quote{
+    margin:26px 0; padding:26px 28px; border-radius:4px;
+    font-family:var(--serif); font-style:italic; font-weight:500; color:var(--ink);
+    font-size:18px; line-height:1.52; border-left:3px solid var(--ink);
+  }
+  blockquote.quote.q-mint{background:var(--mint);}
+  blockquote.quote.q-beige{background:var(--beige);}
+  blockquote.quote.q-lav{background:var(--lavender);}
+  blockquote.quote cite{
+    display:block; margin-top:14px; font-style:normal; font-family:var(--sans); font-weight:700;
+    font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  }
+
+  /* ---------- CALLOUT (watch-outs — lavender) ---------- */
+  .callout{background:var(--lavender); border-radius:4px; padding:22px 26px; margin:24px 0;}
+  .callout .callout-label{font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:var(--graphite2); margin-bottom:12px; font-weight:700;}
+  .callout ul{margin:0; padding:0;}
+  .callout ul li{padding-left:20px; margin-bottom:10px;}
+  .callout ul li::before{content:"✕"; color:var(--graphite2); font-size:11px; top:3px; opacity:.6;}
+
+  /* ---------- ASIDE (personal experience — beige) ---------- */
+  .aside{margin:38px 0 8px; padding:30px 32px; background:var(--beige); border-radius:4px;}
+  .aside .aside-label{font-family:var(--serif); font-style:italic; font-weight:500; font-size:14.5px; color:var(--graphite2); margin-bottom:14px;}
+  .aside p{color:var(--graphite); margin-bottom:12px;}
+  .aside ul{margin:0; padding:0; list-style:none;}
+  .aside ul li{position:relative; padding-left:18px; margin-bottom:8px; color:var(--graphite);}
+  .aside ul li::before{content:"·"; position:absolute; left:2px; color:var(--graphite2); font-weight:700;}
+
+  /* ---------- PRINCIPLES ---------- */
+  .principles{margin:20px 0;}
+  .principle{display:flex; gap:18px; padding:17px 0; border-bottom:1px solid var(--hairline);}
+  .principle:last-child{border-bottom:none;}
+  .principle .p-num{
+    width:32px; height:32px; border-radius:50%; background:var(--white); border:1.4px solid var(--ink); color:var(--ink);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    font-family:var(--serif); font-style:italic; font-weight:500; font-size:14px;
+  }
+  .principle .p-body b{display:block; font-weight:700; margin-bottom:4px; color:var(--ink);}
+  .principle .p-body p{margin:0; color:var(--muted); font-size:15px;}
+
+  /* ---------- CLOSING CTA (cream band, outline circle button) ---------- */
+  .cta{margin:70px 0 0; padding:56px 40px; background:var(--cream); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); text-align:center;}
+  .cta .cta-eyebrow{font-size:11px; text-transform:uppercase; letter-spacing:.16em; color:var(--muted); margin-bottom:18px;}
+  .cta p{font-family:var(--serif); font-style:italic; font-weight:500; font-size:20px; line-height:1.5; max-width:460px; margin:0 auto 32px; color:var(--ink);}
+  .cta-circle{
+    width:112px; height:112px; border-radius:50%; background:var(--ink); color:var(--cream);
+    display:flex; align-items:center; justify-content:center; margin:0 auto;
+    text-decoration:none; transition:background .2s, transform .15s;
+    box-shadow:0 6px 18px rgba(26,24,22,.18);
+  }
+  .cta-circle:hover{background:var(--graphite); transform:scale(1.04);}
+  .cta-circle span{
+    display:block; font-family:var(--sans); font-weight:700; font-size:12.5px;
+    letter-spacing:.06em; text-transform:uppercase; line-height:1; color:var(--cream);
+  }
+
+  /* ---------- FOOTER + CROPPED WORDMARK ---------- */
+  footer.colophon{padding:34px 0 4px; text-align:center; color:var(--muted); font-size:12px; letter-spacing:.05em; text-transform:uppercase;}
+  .wordmark-crop{overflow:hidden; white-space:nowrap; text-align:center; line-height:1; margin-top:4px; height:90px;}
+  .wordmark-crop span{
+    font-family:var(--serif); font-weight:500; font-size:120px; color:var(--ink); opacity:.07; letter-spacing:.01em;
+  }
+
+  @media (max-width:600px){
+    body{font-size:16px;}
+    .chapter-num{width:38px; height:38px; font-size:16px;}
+    h2.chapter-title{font-size:18px;}
+    .lead p::first-letter{font-size:44px;}
+    .cta{padding:40px 26px;}
+  }
+
+  @media print{
+    body{font-size:11.5pt; line-height:1.48;}
+    .wrap{padding:0 6px;}
+    .topbar{padding:8px 0;}
+
+    header.masthead{padding:20px 0 18px;}
+    .eyebrow{margin-bottom:8px;}
+    h1.title{font-size:27px; margin:0 0 8px;}
+    .subtitle{font-size:13px; margin:0 auto 16px;}
+    .chip{padding:5px 12px; font-size:9.5px;}
+
+    .lead{padding:16px 0 2px;}
+    .lead p{font-size:13.5px; line-height:1.5;}
+    .lead p::first-letter{font-size:36px; padding:3px 7px 0 0;}
+
+    nav.toc{margin:16px 0 4px; padding:16px 20px 4px; break-inside:avoid;}
+    nav.toc .toc-label{margin-bottom:8px;}
+    nav.toc ol::before{top:10px; bottom:10px;}
+    nav.toc li{padding:5px 0;}
+    nav.toc .badge{width:24px; height:24px; font-size:10px;}
+    nav.toc a{font-size:12px;}
+
+    section.chapter{padding:18px 0 4px; margin-top:6px;}
+    .chapter-head{margin-bottom:11px; gap:10px;}
+    .chapter-num{width:28px; height:28px; font-size:12px;}
+    h2.chapter-title{font-size:15px;}
+    h3.sub{margin:13px 0 6px; font-size:10px;}
+    .chapter p{margin:0 0 7px; font-size:12px;}
+    .chapter ul li{margin-bottom:4px; font-size:12px;}
+    .sub-note{font-size:11.5px;}
+
+    .steps{margin:0 0 10px;}
+    .steps::before{top:3px; bottom:14px;}
+    .steps li{margin-bottom:8px; gap:9px;}
+    .steps .badge{width:22px; height:22px; font-size:10px;}
+    .steps .step-body{padding-top:0; font-size:12px;}
+    .steps .step-body b{margin-bottom:1px;}
+
+    blockquote.quote{margin:10px 0; padding:12px 16px; font-size:12.5px; line-height:1.4; break-inside:avoid;}
+    blockquote.quote cite{margin-top:5px; font-size:9px;}
+
+    .callout{padding:10px 15px; margin:9px 0; break-inside:avoid;}
+    .callout .callout-label{margin-bottom:5px; font-size:9px;}
+    .callout ul li{margin-bottom:3px; font-size:12px;}
+
+    .aside{margin:12px 0 4px; padding:13px 17px; break-inside:avoid;}
+    .aside .aside-label{margin-bottom:5px; font-size:11px;}
+    .aside p{margin-bottom:5px; font-size:12px;}
+    .aside ul li{margin-bottom:3px; font-size:12px;}
+
+    .principles{margin:7px 0;}
+    .principle{padding:7px 0; gap:11px; break-inside:avoid;}
+    .principle .p-num{width:22px; height:22px; font-size:11px;}
+    .principle .p-body b{font-size:12px;}
+    .principle .p-body p{font-size:11px;}
+
+    .cta{margin:20px 0 0; padding:20px 22px;}
+    .cta .cta-eyebrow{margin-bottom:6px;}
+    .cta p{font-size:13px; margin:0 auto 11px;}
+    .cta-circle{width:68px; height:68px; box-shadow:none;}
+    .cta-circle span{font-size:8px;}
+
+    footer.colophon{padding:9px 0 2px; font-size:9px;}
+    .wordmark-crop{height:48px; margin-top:2px;}
+    .wordmark-crop span{font-size:58px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap"><span class="logo">InTreatment</span></div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Подкаст от психологического центра · <b>InTreatment</b></div>
+    <h1 class="title">Скоро в школу</h1>
+    <p class="subtitle">Конспект разговора о том, как быть рядом с ребенком, а не контролировать его — нежелание учиться, домашка и школьные отношения.</p>
+    <div class="chip-row">
+      <span class="chip c-mint">Не хочет учиться</span>
+      <span class="chip c-beige">Домашка</span>
+      <span class="chip c-lav">Школьные отношения</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lead">
+    <p>До 1 сентября остается все меньше времени, а вместе с формой, рюкзаками и канцелярией в дом обычно возвращается и тревога: снова напоминать, проверять, уговаривать. У одних детей это про «не хочу учиться», у других про то, как усидеть на уроке или соблюдать правила, у третьих - про друзей, адаптацию и будущую нагрузку. И почти всегда за этим стоит не только беспокойство за ребенка, но и собственная усталость родителя от режима «проверить, напомнить, проконтролировать». Этот конспект о том, где заканчивается забота и начинается контроль, и как остаться рядом с ребенком в новом учебном году, не теряя себя.</p>
+  </div>
+
+  <nav class="toc">
+    <div class="toc-label">В этом конспекте</div>
+    <ol>
+      <li><span class="badge">I</span><a href="#ch1">Почему дети не хотят ходить в школу</a></li>
+      <li><span class="badge">II</span><a href="#ch2">Домашние задания: помогать и отстраняться</a></li>
+      <li><span class="badge">III</span><a href="#ch3">Философия отношения к школе</a></li>
+      <li><span class="badge">IV</span><a href="#ch4">Отношения с учителями и одноклассниками</a></li>
+      <li><span class="badge">V</span><a href="#ch5">Роль эмоционального интеллекта родителя</a></li>
+      <li><span class="badge">VI</span><a href="#ch6">Общие выводы и философия родительства</a></li>
+    </ol>
+  </nav>
+
+  <!-- I ================================================== -->
+  <section class="chapter" id="ch1">
+    <div class="chapter-head">
+      <div class="chapter-num">I</div>
+      <h2 class="chapter-title">Почему дети не хотят ходить в школу</h2>
+    </div>
+
+    <h3 class="sub">Возможные причины нежелания учиться</h3>
+    <ul>
+      <li><b>Неинтересная программа</b> - ребенку может быть скучно на уроках, особенно в младших классах, где нужно долго сидеть и слушать одного педагога</li>
+      <li><b>Сложность материала</b> - ребенок может не поспевать за учебной программой, что приводит к демотивации</li>
+      <li><b>Страх ошибиться</b> - постоянное напряжение и боязнь совершить ошибку мешают спонтанности и увлечению учебой</li>
+      <li><b>Отсутствие навыков самоорганизации</b> - ребенку тяжело сориентироваться в учебном процессе</li>
+      <li><b>Проблемы в отношениях</b> - несложившиеся отношения с одноклассниками или учителями</li>
+    </ul>
+
+    <h3 class="sub">Рекомендации родителям</h3>
+    <ul>
+      <li><b>Позволить ребенку не хотеть</b> - важно признать его право на нежелание, не пытаясь немедленно это «исправить»</li>
+      <li><b>Конкретизировать проблему</b> - спросить: «Чего именно ты не хочешь?». Часто выясняется, что не все в школе плохо</li>
+      <li><b>Выяснить причины</b> - понять, что стоит за нежеланием, через диалог с ребенком</li>
+      <li><b>Предложить помощь</b> - спросить: «Какая помощь тебе от меня нужна?» и работать над решением конкретных проблем (режим, репетиторы, организация)</li>
+      <li><b>Помочь преодолевать трудности</b> - не заставлять «хотеть любой ценой», а помочь научиться справляться с тем, что не хочется делать</li>
+    </ul>
+
+    <blockquote class="quote q-mint">
+      Задача родителя - не помочь ребенку захотеть (он может никогда не захотеть), а постепенно помочь ему научиться справляться с тем, что ему не хочется делать, что сложно и что не получается. Это важный навык для взрослой жизни.
+      <cite>Елена, психолог центра</cite>
+    </blockquote>
+  </section>
+
+  <!-- II ================================================= -->
+  <section class="chapter" id="ch2">
+    <div class="chapter-head">
+      <div class="chapter-num">II</div>
+      <h2 class="chapter-title">Домашние задания: как помогать и когда отстраниться</h2>
+    </div>
+
+    <ol class="steps">
+      <li><span class="badge">1</span><div class="step-body"><b>Постепенное физическое дистанцирование</b>В первом классе можно сидеть рядом с ребенком, но не дольше недели. Затем - постепенно отодвигаться физически, оставаясь доступным. Позиция наблюдателя, а не надзирателя.</div></li>
+      <li><span class="badge">2</span><div class="step-body"><b>Коучинговый подход через вопросы</b>«С чего начнешь?», «Что ты сейчас будешь делать?» - не давать указания, а помогать ребенку самому искать ответы.</div></li>
+      <li><span class="badge">3</span><div class="step-body"><b>Четкие рамки и режим</b>Установить конкретное время для домашней работы. Время отдыха так же важно, как время работы. Ребенок должен точно знать, когда он делает уроки.</div></li>
+      <li><span class="badge">4</span><div class="step-body"><b>Не проверять домашнюю работу</b>Не открывать тетради и не контролировать каждую букву. Если ребенок просит проверить - не говорить «правильно / неправильно», а предложить: «Я заметила две ошибки, попробуй их найти». Ребенку важно научиться самому замечать свои ошибки.</div></li>
+      <li><span class="badge">5</span><div class="step-body"><b>Забыть про черновики</b>Сразу писать на чистовик. Написал неправильно - зачеркнул, написал правильно сверху. Не переписывать по десять раз.</div></li>
+    </ol>
+
+    <blockquote class="quote q-beige">
+      До 17:00 должен быть собран рюкзак. После 17:00 - семейное время, и домашняя работа не делается, даже если не завершена.
+      <cite>Елена, психолог центра</cite>
+    </blockquote>
+
+    <div class="callout dont">
+      <div class="callout-label">Частые ошибки родителей</div>
+      <ul>
+        <li>Превращение в «контролера» вместо опоры и поддержки</li>
+        <li>Принятие на себя ответственности за домашнюю работу ребенка</li>
+        <li>Создание привязки: «Я могу учиться только когда мама рядом»</li>
+        <li>Становление представителем школы дома вместо союзника ребенка</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- III ================================================ -->
+  <section class="chapter" id="ch3">
+    <div class="chapter-head">
+      <div class="chapter-num">III</div>
+      <h2 class="chapter-title">Философия отношения к школе</h2>
+    </div>
+
+    <h3 class="sub">Здоровый взгляд на школу</h3>
+    <ul>
+      <li>Школа создана для ребенка, а не ребенок для школы</li>
+      <li>Школа - не вся жизнь ребенка, она не должна быть единственным центром</li>
+      <li>Учителя нужны для того, чтобы помочь ребенку усвоить знания, а не чтобы ребенок показывал им, какой он молодец</li>
+      <li>Ошибки - естественная часть обучения, а не катастрофа</li>
+      <li>Опыт получения ошибок бесценен - важно дать ребенку этот опыт, пока мама рядом и может поддержать</li>
+    </ul>
+
+    <blockquote class="quote q-lav">
+      Мы с моей дочкой первую двойку праздновали. Она очень боялась получить двойку, и когда она ее получила, мы ее праздновали. Ну а что, мы только пятерки да четверки празднуем? Это снимает напряжение, что и двойку получить не страшно, и тройка тоже нормальная оценка.
+      <cite>Елена, психолог центра</cite>
+    </blockquote>
+
+    <h3 class="sub">Если ребенок идет в школу с несделанной домашней работой</h3>
+    <ul>
+      <li>Это не катастрофа - учитель скажет ребенку, может поставить двойку</li>
+      <li>Ребенок будет нести ответственность перед учителем за домашнюю работу - и это тоже опыт</li>
+      <li>Важно оставаться в контакте с ребенком и не становиться представителем школы</li>
+      <li>Родитель должен быть на стороне ребенка, а не на стороне школы</li>
+    </ul>
+
+    <div class="aside">
+      <div class="aside-label">Личный опыт психолога - мамы школьницы</div>
+      <p>Дочь учится в 4-м классе, домашние задания - полностью ее ответственность. Она никогда не садилась рядом с ребенком делать уроки и не проверяет домашнюю работу.</p>
+      <ul>
+        <li>Правило: до 17:00 - время на учебу, после - семейное время, домашка не делается, даже если не закончена</li>
+        <li>Празднуют не только пятерки, но и двойки - чтобы снять страх ошибки</li>
+        <li>Иногда помогает с рисунком для ИЗО, если дочь не успела - чтобы показать: «на меня можно опереться»</li>
+        <li>Дочь иногда говорит «я ненавижу школу», но при уточнении выясняется, что многое ей нравится - пицца, рисование, английский, общение</li>
+      </ul>
+      <p style="margin-top:16px;">Мама самой Елены никогда не упрекала ее за тройки и всегда была на ее стороне в конфликтах со школой - это позволило Елене сформировать спокойное отношение к школе и передать его своей дочери.</p>
+    </div>
+  </section>
+
+  <!-- IV ================================================= -->
+  <section class="chapter" id="ch4">
+    <div class="chapter-head">
+      <div class="chapter-num">IV</div>
+      <h2 class="chapter-title">Отношения с учителями и одноклассниками</h2>
+    </div>
+
+    <h3 class="sub">Когда ребенок приходит расстроенным из школы</h3>
+    <ol class="steps">
+      <li><span class="badge">1</span><div class="step-body"><b>Выдохнуть и дать время</b>Не нападать с порога с вопросами. Дать ребенку войти, понаблюдать. Покормить обедом как минимум.</div></li>
+      <li><span class="badge">2</span><div class="step-body"><b>Отразить состояние</b>«Я вижу, что ты расстроен». «Ты такой грустненький зашел, как ты вообще?». «Хочешь поделиться? Хочешь, я тебя обниму?»</div></li>
+      <li><span class="badge">3</span><div class="step-body"><b>Слушать, не выяснять</b>Не пытаться сразу выяснять, что произошло. Валидировать эмоции ребенка - слушать и принимать, пока он делится эмоционально.</div></li>
+      <li><span class="badge">4</span><div class="step-body"><b>Потом прояснить факты</b>Только после того, как ребенок выговорился эмоционально: «А что произошло? Как это произошло? При каких обстоятельствах?» - и понять, единична ли ситуация или повторяется.</div></li>
+    </ol>
+
+    <div class="callout dont">
+      <div class="callout-label">Чего не делать</div>
+      <ul>
+        <li>Не бежать сразу вмешиваться - писать учителю, звонить родителям одноклассника</li>
+        <li>Не обесценивать - «да ладно, ничего страшного», «будет еще много таких ситуаций»</li>
+        <li>Не сразу давать решения - «просто подойди и скажи вот так»</li>
+        <li>Не становиться на сторону школы против ребенка</li>
+      </ul>
+    </div>
+
+    <h3 class="sub">Когда вмешательство действительно требуется</h3>
+    <ul>
+      <li>Буллинг - отдельная тема, требующая коллективного решения всех родителей и школы</li>
+      <li>Буллинг - «болезнь всего класса»: страдает не только тот, кого травят, но и все участники</li>
+      <li>Повторяющиеся серьезные ситуации, требующие беседы с родителями и учителями</li>
+    </ul>
+
+    <blockquote class="quote q-mint">
+      Самое ценное - что ребенок вам это приносит. «Так здорово, что ты поделился. Я рада, что могу побыть рядом. Мне важно, что ты мне это рассказал» - и показать, что вы можете это выдержать.
+      <cite>Елена, психолог центра</cite>
+    </blockquote>
+
+    <div class="aside">
+      <div class="aside-label">Пример из практики</div>
+      <p>Дочь пришла из лагеря в слезах: подруга, с которой она договорилась играть, ушла играть с другой девочкой. Мама не сказала «ну ладно, будет еще много подружек» - это обесценивание. Вместо этого она:</p>
+      <ul>
+        <li>Побыла рядом, погладила ребенка</li>
+        <li>Отразила: «как это неприятно»</li>
+        <li>Поделилась похожей ситуацией из своей жизни и как она с ней справляется</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- V ================================================== -->
+  <section class="chapter" id="ch5">
+    <div class="chapter-head">
+      <div class="chapter-num">V</div>
+      <h2 class="chapter-title">Роль эмоционального интеллекта родителя</h2>
+    </div>
+
+    <blockquote class="quote q-beige">
+      Если вы не в контакте со своими чувствами, если вы не выдерживаете свои чувства, если вы не понимаете, что вы чувствуете и как с этим справляться, если вас захлестывает тревога - вы не сможете быть рядом с ребенком. И он все меньше и меньше начнет вам приносить.
+      <cite>Елена, психолог центра</cite>
+    </blockquote>
+
+    <h3 class="sub">Метафора</h3>
+    <p class="sub-note">Ребенок по сути приносит родителю свои переживания, как будто говорит: «Смотри, вот это я в себя не вмещаю - ты возьми, пожалуйста, немножко. Вот это попереработай и верни мне уже в более обработанном, мягком формате, который я в себя вмещу».</p>
+
+    <h3 class="sub">Что делать родителю</h3>
+    <ul>
+      <li>Развивать свой эмоциональный интеллект</li>
+      <li>Прорабатывать, перерабатывать, быть в контакте с собой</li>
+      <li>Знать, что с тобой происходит, и уметь с этим работать</li>
+      <li>При необходимости - обратиться к психологу, чтобы разобраться</li>
+    </ul>
+  </section>
+
+  <!-- VI ================================================= -->
+  <section class="chapter" id="ch6">
+    <div class="chapter-head">
+      <div class="chapter-num">VI</div>
+      <h2 class="chapter-title">Общие выводы и философия родительства</h2>
+    </div>
+
+    <blockquote class="quote q-lav">
+      Быть с ребенком в таких тесных отношениях, формировать эту надежную привязанность - для того, чтобы ребенок мог спокойно от нас уйти. Чтобы ребенка отпустить.
+      <cite>Елена, психолог центра</cite>
+    </blockquote>
+
+    <h3 class="sub">Задачи взросления ребенка</h3>
+    <p>Не только научить его быть самостоятельным - но и параллельно маме самой научиться отпускать.</p>
+
+    <h3 class="sub">Три главных принципа</h3>
+    <div class="principles">
+      <div class="principle">
+        <div class="p-num">1</div>
+        <div class="p-body">
+          <b>Школа - не все в жизни</b>
+          <p>Школа - большая часть жизни школьника, но не единственная. Важно сохранять отношения с ребенком, не жертвуя ими ради школьных успехов.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">2</div>
+        <div class="p-body">
+          <b>Оставаться на стороне ребенка</b>
+          <p>Быть опорой и поддержкой, а не представителем школы. Ребенок должен чувствовать: «мама всегда на моей стороне». Иногда можно даже «нарушать правила» вместе, если это укрепляет отношения - но не систематически.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">3</div>
+        <div class="p-body">
+          <b>Давать опыт ошибок и самостоятельности</b>
+          <p>Не создавать «стерильную» жизнь без ошибок. Позволять ребенку столкнуться с последствиями. Быть рядом, чтобы поддержать, когда он справляется с трудностями.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- CTA ================================================ -->
+<div class="cta">
+  <div class="wrap">
+    <div class="cta-eyebrow">Если вы чувствуете, что нужна помощь</div>
+    <p>Если вы снова и снова сталкиваетесь с тревогой, контролем и конфликтами со своим ребенком - с этим можно работать вместе с психологом.</p>
+    <a class="cta-circle" href="https://intreatment.online" target="_blank" rel="noopener">
+      <span>Записаться</span>
+    </a>
+  </div>
+</div>
+
+<footer class="colophon">
+  Подкаст психологического центра InTreatment
+  <div class="wordmark-crop"><span>INTREATMENT</span></div>
+</footer>
+
+</body>
+</html>
