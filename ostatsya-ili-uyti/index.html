@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<title>Остаться или уйти</title>
+<meta name="description" content="Интерактивный конспект подкаста InTreatment: как понять, дать отношениям еще один шанс или расстаться. Главные мысли, вопросы к себе и упражнения.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Остаться или уйти - конспект подкаста InTreatment">
+<meta property="og:description" content="На что опереться, когда страшно ошибиться: главные мысли, вопросы к себе и упражнения для тех, кто стоит перед выбором в отношениях">
+<meta property="og:locale" content="ru_RU">
+<meta name="theme-color" content="#FFFFFF">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+/* Layout: журнальная колонка внутри полос на всю ширину; белые и кремовые полосы чередуются,
+   пастельные карточки несут содержание, графитовый круг - единственный акцент (кнопка записи). */
+:root{
+  --bg:#FFFFFF;
+  --cream:#FAF9F7;
+  --ink:#1A1816;
+  --text:#2D2C2A;
+  --muted:#6E6963;
+  --line:#E4DFD7;
+  --mint:#E2E9E9;
+  --beige:#EFE9E3;
+  --lav:#E7E4EE;
+  --mint-deep:#C9D6D6;
+  --beige-deep:#E2D6C8;
+  --lav-deep:#D6D1E2;
+  --serif:"Playfair Display", Georgia, "Times New Roman", serif;
+  --sans:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  --r:18px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--ink)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:72px}
+.band.cream{background:var(--cream)}
+.narrow{max-width:680px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--ink);text-wrap:balance;margin:0}
+h1{font-size:clamp(42px,7.4vw,80px);line-height:1.03;letter-spacing:-.01em}
+h1 em{font-style:italic}
+h2{font-size:clamp(28px,4.2vw,40px);line-height:1.15}
+h3{font-size:22px;line-height:1.25;font-weight:500}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lead{font-size:clamp(18px,2.2vw,20px);line-height:1.55;max-width:60ch}
+.sub{color:var(--muted);max-width:62ch}
+.stack{display:flex;flex-direction:column;gap:16px}
+.sechead{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+
+/* hero */
+.hero{padding-block:56px 64px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:48px;align-items:center}
+.hero-text{display:flex;flex-direction:column;gap:24px;min-width:0}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.fact{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--text);background:var(--bg)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:13px 22px;font:500 15px/1 var(--sans);text-decoration:none;cursor:pointer;border:1px solid var(--ink);background:var(--ink);color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{opacity:.88}
+.venn{width:100%;max-width:300px;margin-inline:auto;display:flex;flex-direction:column;gap:14px}
+.circles{position:relative;width:100%;aspect-ratio:100/64}
+.venn .c{position:absolute;top:0;width:64%;aspect-ratio:1/1;border-radius:50%}
+.venn .c1{left:0;background:var(--mint)}
+.venn .c2{right:0;background:var(--lav);mix-blend-mode:multiply}
+.venn .mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(18px,2.4vw,24px);color:var(--ink)}
+.vlabels{position:relative;height:1.5em;font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.2vw,22px);color:var(--ink)}
+.vlabels span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+.vlabels span:first-child{left:32%}
+.vlabels span:last-child{left:68%}
+
+/* sticky nav */
+.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-block:1px solid var(--line)}
+.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+.toc .wrap::-webkit-scrollbar{display:none}
+.toc a{flex:0 0 auto;text-decoration:none;font-size:14px;color:var(--text);padding:7px 14px;border-radius:999px}
+.toc a:hover{background:var(--cream)}
+
+/* intro */
+.intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.note{background:var(--beige);border-radius:var(--r);padding:24px 26px;display:flex;flex-direction:column;gap:10px}
+.note.plain{background:var(--bg);border:1px solid var(--line)}
+.note strong{font-family:var(--serif);font-weight:500;font-size:19px;color:var(--ink)}
+
+/* ideas */
+.ideas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.idea{border-radius:var(--r);padding:24px 24px 20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.idea:nth-child(3n+1){background:var(--mint)}
+.idea:nth-child(3n+2){background:var(--beige)}
+.idea:nth-child(3n){background:var(--lav)}
+.idea-top{display:flex;gap:14px;align-items:flex-start}
+.num{flex:0 0 auto;width:34px;height:34px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:16px;color:var(--ink)}
+.idea h3{flex:1;min-width:0}
+.gist{font-size:16px;color:var(--text)}
+.idea-body{display:flex;flex-direction:column;gap:12px;font-size:16px}
+.idea-foot{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:auto}
+.chip{font-size:13px;color:var(--ink);background:rgba(255,255,255,.6);border-radius:999px;padding:5px 12px;font-variant-numeric:tabular-nums}
+.link-btn{background:none;border:0;padding:6px 2px;font:500 14px/1 var(--sans);color:var(--ink);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.star{margin-left:auto;display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.6);border:1px solid transparent;border-radius:999px;padding:6px 12px;font:14px/1 var(--sans);color:var(--ink);cursor:pointer}
+.star[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.star svg{width:15px;height:15px}
+
+/* questions */
+.qs{display:flex;flex-direction:column;gap:14px}
+.q{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 16px}
+.q .num{grid-row:span 3;width:44px;height:44px;border:0;font-size:20px;font-weight:500}
+.q:nth-child(3n+1) .num{background:var(--mint)}
+.q:nth-child(3n+2) .num{background:var(--beige-deep)}
+.q:nth-child(3n) .num{background:var(--lav-deep)}
+.q label{font-family:var(--serif);font-size:20px;line-height:1.3;color:var(--ink)}
+.q .hint{font-size:15px;color:var(--muted)}
+textarea,input[type=text]{width:100%;font:16px/1.5 var(--sans);color:var(--text);background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:12px 14px;resize:vertical}
+textarea{min-height:64px;height:64px;max-height:60vh}
+textarea:focus,input[type=text]:focus{outline:2px solid var(--ink);outline-offset:1px;background:var(--bg)}
+.progress{display:flex;align-items:center;gap:14px;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{flex:1;max-width:240px;height:4px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ink);transition:width .3s}
+
+/* values */
+.vlist{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.vrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 20px;align-items:center;padding-block:14px;border-bottom:1px solid var(--line)}
+.vrow .vname{font-size:17px;color:var(--ink);min-width:0}
+.vrow .vname small{display:block;font-size:13px;color:var(--muted)}
+.seg{display:inline-grid;grid-template-columns:repeat(3,auto);gap:4px;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px}
+.seg button{border:0;background:transparent;border-radius:999px;padding:8px 14px;font:14px/1.2 var(--sans);color:var(--muted);cursor:pointer;white-space:nowrap}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-checked="true"]{color:var(--ink);font-weight:500}
+.seg button.o-none[aria-checked="true"]{background:var(--line)}
+.seg button.o-fear[aria-checked="true"]{background:var(--beige-deep)}
+.seg button.o-want[aria-checked="true"]{background:var(--mint-deep)}
+.legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:28px}
+.legend div{border-radius:14px;padding:16px 18px;font-size:15px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.legend b{font-family:var(--serif);font-weight:500;font-size:18px;color:var(--ink)}
+.legend .l-none{background:var(--bg);border:1px solid var(--line)}
+.legend .l-fear{background:var(--beige)}
+.legend .l-want{background:var(--mint)}
+.add{display:flex;gap:8px;margin-top:20px;max-width:520px}
+.add input{flex:1;min-width:0}
+.add .btn{padding:11px 18px}
+.vresult{margin-top:28px;display:flex;flex-direction:column;gap:16px}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.col{border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.col.hold{background:var(--beige)}
+.col.want{background:var(--mint)}
+.col h3{font-size:20px}
+.col p{font-size:15px}
+.reflect{background:var(--lav);border-radius:var(--r);padding:20px 24px;display:flex;flex-direction:column;gap:10px}
+.vcount{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:14px}
+
+/* stress */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.toggle{border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:999px;padding:9px 16px;font:15px/1.2 var(--sans);cursor:pointer}
+.toggle[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.stress-msg{margin-top:22px;border-radius:var(--r);padding:22px 24px;background:var(--bg);border:1px solid var(--line)}
+.stress-msg.on{background:var(--lav);border-color:var(--lav)}
+
+/* exercises */
+.ex-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ex{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.ex.wide{grid-column:1/-1}
+.ex .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.ex .field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.ex .field label{font-size:14px;font-weight:500;color:var(--ink)}
+.aside{background:var(--cream);border-radius:12px;padding:14px 16px;font-size:15px}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.steps li{display:flex;gap:14px;align-items:flex-start;font-size:16px}
+.steps .num{width:30px;height:30px;border:0;background:var(--lav);font-size:15px}
+.ex-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ex-icon{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:var(--ink)}
+.ex-icon svg{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ex-icon.i1{background:var(--mint)}.ex-icon.i2{background:var(--beige)}.ex-icon.i3{background:var(--lav)}.ex-icon.i4{background:var(--mint-deep)}
+.ex:hover .ex-icon svg{transform:rotate(-6deg)}
+.ex-icon svg{transition:transform .4s}
+.tag{font-size:12px;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:6px 12px;color:var(--ink)}
+.t-self{background:var(--cream);border:1px solid var(--line)}
+.t-pair{background:var(--lav)}
+.phrases{display:flex;flex-direction:column;gap:12px}
+.phr-title{font-family:var(--serif);font-weight:500;font-size:18px;color:var(--ink)}
+.phr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.phr{border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.phr b{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:var(--muted)}
+.phr span{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.35;color:var(--ink)}
+.phr.p1{background:var(--beige)}.phr.p2{background:var(--mint)}.phr.p3{background:var(--lav)}
+
+/* quote */
+.quote{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+.quote blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(28px,4vw,42px);line-height:1.2;color:var(--ink)}
+.quote .src{margin-top:16px;font-size:14px;color:var(--muted);font-style:normal;font-family:var(--sans)}
+
+/* notes */
+.notes-box{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:24px;white-space:pre-wrap;font-size:15px;line-height:1.65;min-height:120px;overflow-wrap:anywhere}
+.notes-box.empty{color:var(--muted)}
+.status{font-size:14px;color:var(--muted);min-height:1.4em}
+.btn.warn{background:var(--bg);color:var(--ink)}
+.btn.warn.armed{background:#8A3B2E;border-color:#8A3B2E;color:#FFFFFF}
+#copyFallback{min-height:160px}
+
+/* cta */
+.cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end}
+.cta-text{display:flex;flex-direction:column;gap:16px;min-width:0}
+.round{width:150px;height:150px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;text-align:center;text-decoration:none;font-family:var(--serif);font-size:20px;box-shadow:0 18px 40px -16px rgba(26,24,22,.55);transition:transform .2s}
+.round:hover{transform:translateY(-2px)}
+.cta-list{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:17px}
+.cta-list li::marker{color:var(--muted)}
+.path{background:var(--beige);border-radius:var(--r);padding:22px 24px;display:flex;flex-direction:column;gap:12px}
+.path-title{font-family:var(--serif);font-weight:500;font-size:19px;color:var(--ink)}
+.path ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:8px}
+.small-links{display:flex;flex-wrap:wrap;gap:18px;font-size:15px}
+footer{padding-block:36px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+
+/* живые детали: выделения, дыхание кругов, росток, прогресс чтения */
+h2 em,h3 em{font-style:italic}
+mark{--hl:#E8D6C2;background:linear-gradient(var(--hl),var(--hl)) no-repeat 0 88%/100% 42%;color:inherit;padding:0 .08em;border-radius:2px}
+.idea:nth-child(3n+1) mark{--hl:#B3C8C8}
+.idea:nth-child(3n+2) mark{--hl:#D8C4AD}
+.idea:nth-child(3n) mark{--hl:#C6BBDA}
+.note mark{--hl:#DCCAB6}
+.reflect mark,.stress-msg mark{--hl:#D0C8E0}
+.js mark{background-size:0% 42%;transition:background-size 1s cubic-bezier(.3,.7,.2,1) .15s}
+.js mark.on{background-size:100% 42%}
+.gist{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.4;color:var(--ink)}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.r1{animation-delay:.05s}.r2{animation-delay:.15s}.r3{animation-delay:.3s}.r4{animation-delay:.45s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.breathe .c1{animation:inL 7s ease-in-out infinite alternate}
+.breathe .c2{animation:inR 7s ease-in-out infinite alternate}
+.breathe .mid{animation:midp 7s ease-in-out infinite alternate}
+@keyframes inL{from{transform:translateX(-7%)}to{transform:translateX(2%)}}
+@keyframes inR{from{transform:translateX(7%)}to{transform:translateX(-2%)}}
+@keyframes midp{from{opacity:.55;letter-spacing:.06em}to{opacity:1;letter-spacing:0}}
+.idea{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.js .idea{transform:translateY(14px)}
+.js .idea.on{transform:none}
+.idea:hover{box-shadow:0 14px 30px -18px rgba(26,24,22,.35)}
+.js .idea.on:hover{transform:translateY(-3px)}
+.readbar{position:absolute;left:0;right:0;bottom:-1px;height:2px;pointer-events:none}
+.readbar i{display:block;height:100%;width:0;background:var(--ink)}
+.quote{position:relative;isolation:isolate}
+.quote blockquote{position:relative}
+.quote blockquote::before{content:"«";display:block;font-size:2.4em;line-height:1;height:.82em;margin:0 0 0 -.04em;color:var(--mint-deep)}
+.sprout path{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0}
+.sprout .leaf{fill:var(--mint)}
+.js .sprout path{stroke-dashoffset:1}
+.js .sprout .leaf{fill-opacity:0}
+.js .sprout.on .ground{animation:draw .8s ease forwards}
+.js .sprout.on .seed{animation:draw .6s ease .5s forwards}
+.js .sprout.on .stem{animation:draw .9s ease 1s forwards}
+.js .sprout.on .leaf{animation:draw .8s ease 1.7s forwards,leaf .8s ease 2.3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes leaf{to{fill-opacity:1}}
+.round{position:relative}
+.round::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid var(--ink);animation:ring 3.2s ease-out infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.5}80%,100%{transform:scale(1.35);opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  .js mark{background-size:100% 42%}
+  .js .idea{transform:none}
+  .js .sprout path{stroke-dashoffset:0}
+  .js .sprout .leaf{fill-opacity:1}
+  .round::after{display:none}
+}
+
+@media (max-width:820px){
+  .hero-grid,.intro-grid,.quote,.cta{grid-template-columns:minmax(0,1fr)}
+  .venn{max-width:230px}
+  .ideas,.cols,.ex-grid,.ex .row,.legend,.phr-grid{grid-template-columns:minmax(0,1fr)}
+  .vrow{grid-template-columns:minmax(0,1fr)}
+  .seg{grid-template-columns:repeat(3,minmax(0,1fr));width:100%}
+  .seg button{padding:9px 6px;white-space:normal}
+  .band{padding-block:52px}
+  .cta .round{width:132px;height:132px}
+}
+</style>
+<style>html{color-scheme:light}</style>
+</head>
+<body>
+<script>document.documentElement.classList.add("js");</script>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow rise r1">Подкаст InTreatment · интерактивный конспект</p>
+      <h1 class="rise r2">Остаться <em>или</em> уйти</h1>
+      <p class="lead rise r3">На что опереться, когда страшно ошибиться в любую сторону. Главные мысли из разговора с психологом InTreatment, вопросы к себе и упражнения, которые направляют в принятии решения.</p>
+      <div class="facts rise r4" aria-label="Что внутри">
+        <span class="fact">8 главных мыслей</span>
+        <span class="fact">7 вопросов к себе</span>
+        <span class="fact">4 упражнения</span>
+      </div>
+      <div class="actions">
+        <a class="btn" href="#mysli">Начать с главных мыслей</a>
+        <a class="btn ghost" id="listenVk" href="#" target="_blank" rel="noopener" hidden>▶ Слушать во ВКонтакте</a>
+        <a class="btn ghost" id="listenTg" href="#" target="_blank" rel="noopener" hidden>▶ Слушать в Telegram</a>
+      </div>
+    </div>
+    <div class="venn" aria-hidden="true">
+      <div class="circles breathe"><span class="c c1"></span><span class="c c2"></span><span class="mid">вы</span></div>
+      <div class="vlabels"><span>остаться</span><span>уйти</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Разделы конспекта">
+  <div class="readbar" aria-hidden="true"><i id="readbar"></i></div>
+  <div class="wrap">
+    <a href="#mysli">Главные мысли</a>
+    <a href="#voprosy">Вопросы к себе</a>
+    <a href="#derzhit">Что для вас важно</a>
+    <a href="#nagruzka">Ваша нагрузка</a>
+    <a href="#uprazhneniya">Упражнения</a>
+    <a href="#zapisi">Ваши записи</a>
+    <a href="#zapis">Записаться</a>
+  </div>
+</nav>
+
+<main>
+  <section class="band">
+    <div class="wrap intro-grid">
+      <div class="note">
+        <strong>Как пользоваться конспектом</strong>
+        <p>Читайте мысли, отмечайте звездочкой то, что откликнулось, и отвечайте на вопросы прямо на странице. Все, что вы напишете, соберется в разделе «Ваши записи». <mark>Записи хранятся только в вашем браузере</mark>, их никто не увидит.</p>
+      </div>
+      <div class="note plain">
+        <strong>Прежде чем начать</strong>
+        <p>Готовой формулы, которая выдаст правильный ответ, у такого выбора нет. Зато есть вопросы, после которых <mark>становится яснее, чего хотите вы сами</mark>. Если в отношениях есть насилие или угроза вашей безопасности, начинать нужно с безопасности: обратитесь к психологу или в кризисную службу своего города.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band cream" id="mysli">
+    <div class="wrap">
+      <div class="sechead">
+        <p class="eyebrow">Главные мысли выпуска</p>
+        <h2>Восемь мыслей, которые помогают увидеть отношения <em>яснее</em></h2>
+        <p class="sub">Мысли идут в том порядке, в каком звучат в подкасте. Раскройте карточку, чтобы прочитать подробнее, и отметьте звездочкой то, к чему захочется вернуться.</p>
+      </div>
+      <div class="ideas" id="ideas"></div>
+    </div>
+  </section>
+
+  <section class="band" id="voprosy">
+    <div class="wrap narrow">
+      <div class="sechead">
+        <p class="eyebrow">Работа с собой</p>
+        <h2>Семь вопросов к себе перед <em>важным решением</em></h2>
+        <p class="sub">Отвечайте в любом порядке и столько, сколько хочется. Можно вернуться к вопросам через неделю и посмотреть, изменились ли ответы.</p>
+        <div class="progress"><span id="qCount">Отвечено: 0 из 7</span><span class="bar"><i id="qBar"></i></span></div>
+      </div>
+      <div class="qs" id="qs"></div>
+    </div>
+  </section>
+
+  <section class="band cream" id="derzhit">
+    <div class="wrap narrow">
+      <div class="sechead">
+        <p class="eyebrow">Упражнение на различение</p>
+        <h2>Что для вас <em>важно</em> в этих отношениях и почему</h2>
+        <p class="sub"><mark>Одно и то же может держать нас в паре по разным причинам.</mark> Финансовая стабильность кому-то дорога, а кого-то пугает возможность ее лишиться. Пройдите по списку и для каждого пункта выберите, что ближе к правде сейчас.</p>
+      </div>
+      <div class="legend">
+        <div class="l-fear"><b>Боюсь потерять</b><span>Я держусь за это, потому что страшно остаться без него.</span></div>
+        <div class="l-want"><b>Хочу и ценю</b><span>Мне это дорого, оно меня радует и наполняет.</span></div>
+        <div class="l-none"><b>Для меня неважно</b><span>Этот пункт на меня почти не влияет.</span></div>
+      </div>
+      <p class="sub" style="margin-bottom:16px">Если подходят оба первых варианта, выберите тот, что сильнее.</p>
+      <div class="vlist" id="vlist"></div>
+      <p class="vcount" id="vcount"></p>
+      <form class="add" id="addForm">
+        <label for="addInput" hidden>Свой пункт</label>
+        <input type="text" id="addInput" placeholder="Свой пункт, например: «он смешит меня по утрам»" maxlength="80">
+        <button class="btn" type="submit">Добавить</button>
+      </form>
+      <div class="vresult" id="vresult" hidden>
+        <div class="cols">
+          <div class="col hold"><h3>Держится на страхе потерять</h3><p id="resFear"></p></div>
+          <div class="col want"><h3>Держится на желании</h3><p id="resWant"></p></div>
+        </div>
+        <div class="reflect"><p id="resText"></p><p>Результат подсказывает, на чем сейчас стоят ваши отношения, а решение остается за вами. С этой картиной можно идти в разговор с собой, с партнером или с психологом.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="nagruzka">
+    <div class="wrap narrow">
+      <div class="sechead">
+        <p class="eyebrow">Проверка контекста</p>
+        <h2>Что сейчас происходит в вашей <em>жизни</em></h2>
+        <p class="sub"><mark>Желание расстаться часто приходит волнами</mark>: сегодня вы мысленно подаете на развод, а через два дня уже отпустило. В сильном стрессе психика старается избавиться от опор, и партнер оказывается одной из них. Отметьте, что происходило с вами за последние несколько месяцев.</p>
+      </div>
+      <div class="chips" id="stress"></div>
+      <div class="stress-msg" id="stressMsg" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="band cream" id="uprazhneniya">
+    <div class="wrap">
+      <div class="sechead">
+        <p class="eyebrow">Практика</p>
+        <h2>Четыре <em>упражнения</em> из выпуска</h2>
+        <p class="sub">Три упражнения помогут разобраться в себе, четвертое делают вдвоем с партнером. Начните с того, что сейчас ближе.</p>
+      </div>
+      <div class="ex-grid">
+        <article class="ex wide">
+          <div class="ex-head"><span class="ex-icon i1" aria-hidden="true"><svg viewBox="0 0 28 28" width="28" height="28"><path d="M14 25V15M14 15L6 6M14 15l8-9M6 6h4M6 6v4M22 6h-4M22 6v4"/></svg></span><span class="tag t-self">Для себя</span></div>
+          <h3>Два дня, два решения</h3>
+          <p>Проживите один день с мыслью, что вы остаетесь с этим человеком и выбрали его. Следующий день проживите с мыслью, что решили расстаться. Вечером каждого дня запишите, что вы замечали в теле, в настроении и в мыслях.</p>
+          <div class="row">
+            <div class="field"><label for="ex-stay">День «я остаюсь»</label><textarea id="ex-stay" data-ex="stay" placeholder="Что происходило в теле? Какое было настроение? Какие мысли приходили?"></textarea></div>
+            <div class="field"><label for="ex-leave">День «я ухожу»</label><textarea id="ex-leave" data-ex="leave" placeholder="Что происходило в теле? Какое было настроение? Какие мысли приходили?"></textarea></div>
+          </div>
+          <p class="aside">Если во второй день пришли радость и облегчение, спросите себя, откуда они. Возможно, психика радуется, что решение наконец принято и можно выдохнуть. А возможно, вы нащупали свое решение. Различить одно и другое бывает трудно, и здесь хорошо помогает разговор с психологом.</p>
+        </article>
+        <article class="ex">
+          <div class="ex-head"><span class="ex-icon i2" aria-hidden="true"><svg viewBox="0 0 28 28" width="28" height="28"><path d="M7 4h14M7 24h14M9 4c0 6 5 7 5 10s-5 4-5 10M19 4c0 6-5 7-5 10s5 4 5 10"/><path d="M11.5 21.5h5"/></svg></span><span class="tag t-self">Для себя</span></div>
+          <h3>Вы через пять и десять лет</h3>
+          <p>Представьте, что прошло пять лет. Вы живете вместе, у вас общий быт, может быть, дети и планы. Затем представьте, что прошло десять. Рядом с вами тот человек, которого вы знаете сегодня: психика любит надеяться, что со временем партнер изменится, и на время упражнения эту надежду лучше отложить.</p>
+          <div class="field"><label for="ex-five">Что я чувствую, когда представляю нас через пять лет</label><textarea id="ex-five" data-ex="five"></textarea></div>
+          <div class="field"><label for="ex-ten">Что я думаю о своей жизни через десять лет</label><textarea id="ex-ten" data-ex="ten"></textarea></div>
+        </article>
+        <article class="ex">
+          <div class="ex-head"><span class="ex-icon i3" aria-hidden="true"><svg viewBox="0 0 28 28" width="28" height="28"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 11h20M9.5 3.5v5M18.5 3.5v5M10 17.5l3 3 5-6"/></svg></span><span class="tag t-self">Для себя</span></div>
+          <h3>Свой срок</h3>
+          <p>Когда вы давно стараетесь сохранить отношения в одиночку, помогает договориться с собой о сроке. Так усилия перестают уходить в бесконечность, и у вас появляется точка, в которой можно спокойно подвести итог.</p>
+          <div class="field"><label for="ex-term">Сколько времени я даю себе и этим отношениям</label><input type="text" id="ex-term" data-ex="term" placeholder="Например: до весны"></div>
+          <div class="field"><label for="ex-try">Что я попробую за это время</label><textarea id="ex-try" data-ex="try"></textarea></div>
+        </article>
+        <article class="ex wide">
+          <div class="ex-head"><span class="ex-icon i4" aria-hidden="true"><svg viewBox="0 0 28 28" width="28" height="28"><path d="M3.5 5.5h13v9h-7l-4 3v-3h-2z"/><path d="M19.5 10.5h5v9h-2v3l-4-3h-7v-2"/></svg></span><span class="tag t-pair">Для пары</span></div>
+          <h3>Разговор на один вечер в неделю</h3>
+          <p>Самые сложные разговоры обычно случаются с самыми близкими людьми. Этот ритуал помогает говорить о трудном и при этом слышать друг друга. Выберите один вечер в неделю и пройдите шаги по порядку.</p>
+          <ol class="steps" id="pairSteps"></ol>
+          <div class="phrases">
+            <p class="phr-title">Фразы, с которых можно начать</p>
+            <div class="phr-grid">
+              <div class="phr p1"><b>Рассказать, чего не хватило</b><span>«На этой неделе мне не хватило...»</span><span>«Мне было одиноко, когда...»</span></div>
+              <div class="phr p2"><b>Проверить, что услышали</b><span>«Я правильно тебя понимаю? Ты говоришь, что...»</span></div>
+              <div class="phr p3"><b>Поблагодарить</b><span>«Мне было хорошо, когда ты...»</span><span>«Спасибо тебе за...»</span></div>
+            </div>
+          </div>
+          <p class="aside">Если такой разговор каждый раз заканчивается ссорой, стоит прийти на парную консультацию. Когда в разговоре есть третий человек, пары часто слышат друг от друга то, чего раньше не слышали.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap quote">
+      <div>
+        <blockquote>Отношения - это когда мне с тобой лучше, чем без тебя</blockquote>
+        <p class="src">Из подкаста InTreatment</p>
+      </div>
+      <div class="stack">
+        <svg class="sprout" viewBox="0 0 120 130" width="104" height="112" aria-hidden="true">
+          <path class="ground" pathLength="1" d="M12 118 H108"/>
+          <path class="seed" pathLength="1" d="M51 117 C54 108 66 108 69 117 C64 121 56 121 51 117 Z"/>
+          <path class="stem" pathLength="1" d="M60 110 C61 96 58 82 60 62"/>
+          <path class="leaf" pathLength="1" d="M60 84 C47 83 38 74 35 61 C49 60 58 69 60 84 Z"/>
+          <path class="leaf" pathLength="1" d="M60 70 C72 66 82 56 85 43 C71 44 62 53 60 70 Z"/>
+        </svg>
+        <h3>Решение зреет как <em>семечко</em></h3>
+        <p>Чтобы семечко проросло, ему нужны почва, солнце, вода и время, и всходов на следующий день никто не ждет. Решений такого масштаба человек принимает в жизни совсем немного, поэтому можно позволить себе пожить с сомнениями, подумать и собрать опоры. Пока решение зреет, <mark>относитесь к себе бережно</mark> и обходитесь без упреков вроде «тряпка, решайся уже».</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band cream" id="zapisi">
+    <div class="wrap narrow">
+      <div class="sechead">
+        <p class="eyebrow">Только для вас</p>
+        <h2>Ваши <em>записи</em></h2>
+        <p class="sub">Здесь собирается все, что вы отметили и написали на этой странице. Записи хранятся только в этом браузере, поэтому, чтобы сохранить их надолго, скопируйте их в заметки.</p>
+      </div>
+      <div class="notes-box empty" id="notes">Пока здесь пусто. Отметьте мысль звездочкой или ответьте на любой вопрос, и запись появится здесь.</div>
+      <div class="actions" style="margin-top:18px">
+        <button class="btn" type="button" id="copyBtn">Скопировать записи</button>
+        <button class="btn warn" type="button" id="clearBtn">Очистить все</button>
+      </div>
+      <p class="status" id="status" aria-live="polite"></p>
+      <textarea id="copyFallback" readonly hidden aria-label="Текст записей для копирования"></textarea>
+    </div>
+  </section>
+
+  <section class="band" id="zapis">
+    <div class="wrap cta">
+      <div class="cta-text">
+        <p class="eyebrow">Психологический центр InTreatment</p>
+        <h2>Запись на <em>консультацию</em></h2>
+        <p class="lead">Если в отношениях вы встаете перед выбором, остаться или расстаться, ваша пара проживает кризис, вы принимаете решение о разводе, сталкиваетесь с его последствиями или с трудностями в понимании друг друга, обратитесь за профессиональной поддержкой к психологам InTreatment. Они помогут найти опоры, прожить болезненные чувства и <mark>в своем темпе выбрать решение, подходящее именно вам</mark>.</p>
+        <div class="path">
+          <p class="path-title">Как записаться на консультацию</p>
+          <ol>
+            <li>Зайдите в <a href="https://t.me/Intreatmentpsy_bot" target="_blank" rel="noopener">бот InTreatment</a>.</li>
+            <li>Нажмите раздел «Трудности в отношениях» и выберите ситуацию, похожую на вашу.</li>
+          </ol>
+          <p>Можно и сразу написать в чат, что вы хотите записаться к психологу. Дежурный психолог поможет вам с записью.</p>
+        </div>
+        <div class="small-links">
+          <a href="https://t.me/voprosy" target="_blank" rel="noopener">Задать вопрос анонимно</a>
+          <a href="https://intreatment.online" target="_blank" rel="noopener">Сайт центра</a>
+        </div>
+      </div>
+      <a class="round" href="https://t.me/Intreatmentpsy_bot" target="_blank" rel="noopener">Записаться</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Конспект подкаста психологического центра InTreatment</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Ссылки на выпуск. Вставьте адрес поста, и на первом экране появится кнопка.
+  var VK_URL = "";
+  var TG_URL = "";
+
+  var KEY = "intreatment-konspekt-ostatsya-ili-uyti-v1";
+
+  var IDEAS = [
+    {t:"«Он же хороший»: почему отсутствия плохого бывает мало",
+     g:"Стоит посмотреть и на то, что между вами есть.",
+     b:["Мы привыкли проверять отношения по списку того, чего в них нет: измен, криков, долгов. Если список чистый, кажется, что жаловаться не на что, и от этого тоска становится еще непонятнее.",
+        "Полезно посмотреть и на то, <mark>что между вами есть</mark>. Интересны ли вы друг другу? Есть ли нежность, поддержка, общие планы? Когда пара строит планы на годы вперед, психика слышит в этом простое сообщение: <mark>я выбираю тебя сейчас</mark>."]},
+    {t:"«Если любит, сам догадается»: фантазия, о которую разбилась не одна семейная лодка",
+     g:"О своих потребностях приходится говорить вслух.",
+     b:["Нам хочется верить, что любящий человек всегда внимателен и никогда не раздражается. За такой картинкой легко потерять живого человека с его усталостью и настроением.",
+        "<mark>Близкий человек не умеет читать мысли</mark>, как бы сильно он вас ни любил. Помогает заметить, когда именно вам одиноко: все время или в конкретные моменты. Конкретный момент подсказывает, чего вам не хватает и о чем стоит сказать."]},
+    {t:"«Ты отпросилась у Васи?»: есть ли в паре место для вас",
+     g:"Важно, как партнер относится к тому, что дорого вам.",
+     b:["Партнер может терпеть велопрогулки, которые вы обожаете, и в этом нет беды. Часть потребностей мы закрываем с друзьями, коллегами и единомышленниками.",
+        "Присмотритесь к тому, <mark>как партнер относится к вашему увлечению</mark>. Высмеивает, запрещает, ждет, что вы отпроситесь? Решает, что в субботу вы едете к его маме, и ничего у вас не спрашивает? Тогда стоит понять, кто в паре чаще идет на компромисс и повторяется ли эта история снова и снова."]},
+    {t:"Трудность или столкновение ценностей: что пара может пройти вместе",
+     g:"Пара справляется со многим, когда проблему видят оба.",
+     b:["У каждого из нас есть пять-десять главных ценностей, и у партнеров они совпадают лишь частично. Пара справляется даже с большими сложностями, когда <mark>оба видят проблему</mark>, замечают свой вклад в нее и готовы о ней разговаривать.",
+        "Если поступок партнера <mark>задевает вашу главную ценность</mark>, договориться намного труднее. В выпуске звучит пример: один из партнеров считает нормальным воспитывать собаку электрошоком. Для кого-то такое расхождение окажется непреодолимым, и решать здесь будете только вы."]},
+    {t:"«Я изменюсь»: почему на обещание трудно опереться",
+     g:"Опереться можно на поступки, которые держатся во времени.",
+     b:["Обещание показывает намерение. Опереться можно на <mark>изменения в поведении, которые сохраняются</mark> и после ссоры, и в дни, когда вы злитесь друг на друга.",
+        "Многим знакома такая картина: после серьезного разговора партнер неделю моет посуду без напоминаний, а потом все постепенно возвращается на круги своя. Такая история многое говорит о том, как работают ваши договоренности."]},
+    {t:"«Достаточно ли я сделала?»: вопрос, который держит годами",
+     g:"Честнее спросить, сколько времени вы готовы дать себе и отношениям.",
+     b:["Всегда найдется еще одна книга, еще один психолог, еще один тренинг, поэтому сделанного будет казаться мало при любом раскладе.",
+        "Помогает другой вопрос: <mark>сколько еще времени я даю себе и этим отношениям?</mark> Он особенно важен, если вы давно стараетесь в одиночку, а партнер не видит проблемы или соглашается что-то менять только на неделю."]},
+    {t:"«Хороший же мужик, ты чего?»: что держит, а из-за чего хочется остаться",
+     g:"Страх и желание быть вместе ощущаются по-разному.",
+     b:["Удерживать в отношениях могут привязанность, страх остаться одной, деньги, мнение родных, страх причинить боль детям. Когда явной причины уйти нет, решиться на перемены особенно трудно.",
+        "Желание быть вместе ощущается иначе: <mark>в нем больше чувства и меньше расчета</mark>. Оно похоже на тоску от мысли, что вы больше не проснетесь рядом и не подержите этого человека за руку."]},
+    {t:"Сегодня в МФЦ, через два дня отпустило: как стресс толкает к разводу",
+     g:"Прежде чем решать, посмотрите на свою жизнь в целом.",
+     b:["Желание расстаться часто приходит волнами. В сильном стрессе <mark>психика старается избавиться от опор</mark>, и партнер оказывается одной из них. Рождение ребенка, переезд, увольнение, ремонт, болезнь или потеря близкого переключают мозг на быстрые решения, которые обещают облегчение прямо сейчас.",
+        "Похожее бывает при выгорании: хочется отсечь даже то, что наполняет. Возможно, тучи сгустились над всей вашей жизнью, а расставание кажется единственной дверью, через которую можно выйти."]}
+  ];
+
+  var QS = [
+    {q:"Что хорошего есть между нами сейчас?", h:"Интерес друг к другу, нежность, поддержка, общие планы. Можно начать с мелочей."},
+    {q:"Когда мне одиноко: все время или в какие-то моменты?", h:"Вспомните последнюю неделю. В какой момент стало одиноко и что тогда происходило?"},
+    {q:"О чем я молчу и жду, что партнер догадается сам?", h:"Что из этого можно сказать вслух на этой неделе?"},
+    {q:"Есть ли в наших отношениях место для меня?", h:"Кто чаще идет на компромисс? Приходится ли вам отпрашиваться?"},
+    {q:"Наша трудность решаемая или задевает мою главную ценность?", h:"Видите ли вы проблему вдвоем? Готовы ли оба о ней говорить?"},
+    {q:"Что меня держит и из-за чего мне хочется быть вместе?", h:"Если убрать страх, деньги и чужое мнение, что останется?"},
+    {q:"Сколько еще времени я даю себе и этим отношениям?", h:"Ответ может быть любым, даже «пока не знаю»."}
+  ];
+
+  var VALUES = [
+    "Финансовая стабильность","Общий дом и налаженный быт","Полная семья для детей","Одобрение родных и друзей",
+    "Ощущение, что у меня «все как у людей»","Прожитые вместе годы","Предсказуемость: я знаю, каким будет завтра",
+    "Разговоры с этим человеком","Нежность и прикосновения","Утро, когда мы просыпаемся рядом",
+    "Поддержка в трудные дни","Общие планы на будущее"
+  ];
+
+  var STRESS = ["Рождение ребенка","Переезд","Увольнение или новая работа","Ремонт","Болезнь близкого","Потеря близкого","Выгорание","Финансовые трудности","Большая нагрузка на работе"];
+
+  var PAIR = [
+    "Выберите время, когда никто никуда не торопится, и сядьте друг напротив друга.",
+    "По очереди расскажите, где на этой неделе вам не хватило тепла, внимания или поддержки.",
+    "Пока говорит один, второй слушает без оценок: не перебивает и не закатывает глаза.",
+    "Слушающий пересказывает услышанное своими словами и спрашивает, правильно ли понял.",
+    "Закончите разговор тем, где было хорошо и за что вы друг другу благодарны."
+  ];
+
+  var EX_LABELS = {stay:"День «я остаюсь»", leave:"День «я ухожу»", five:"Через пять лет", ten:"Через десять лет", term:"Мой срок", "try":"Что я попробую за это время"};
+
+  var S = {stars:{}, q:{}, val:{}, custom:[], stress:{}, ex:{}, pair:{}};
+  try{ var raw = localStorage.getItem(KEY); if(raw){ var p = JSON.parse(raw); for(var k in S){ if(p && p[k]) S[k]=p[k]; } } }catch(e){}
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} renderNotes(); }
+
+  function el(tag, attrs, text){ var n=document.createElement(tag); if(attrs){ for(var a in attrs){ if(a==="class") n.className=attrs[a]; else n.setAttribute(a, attrs[a]); } } if(text!=null) n.textContent=text; return n; }
+  var STAR_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.8l2.8 6 6.5.7-4.9 4.4 1.4 6.4L12 17l-5.8 3.3 1.4-6.4-4.9-4.4 6.5-.7z"/></svg>';
+
+  [["listenVk", VK_URL], ["listenTg", TG_URL]].forEach(function(p){ if(p[1]){ var b=document.getElementById(p[0]); b.href=p[1]; b.hidden=false; } });
+
+  // ideas
+  var ideasBox = document.getElementById("ideas");
+  IDEAS.forEach(function(it, i){
+    var card = el("article",{class:"idea"});
+    var top = el("div",{class:"idea-top"});
+    top.appendChild(el("span",{class:"num","aria-hidden":"true"}, String(i+1)));
+    top.appendChild(el("h3",null,it.t));
+    card.appendChild(top);
+    card.appendChild(el("p",{class:"gist"},it.g));
+    var body = el("div",{class:"idea-body",id:"idea-body-"+i}); body.hidden = true;
+    it.b.forEach(function(par){ var pe=el("p"); pe.innerHTML=par; body.appendChild(pe); });
+    card.appendChild(body);
+    var foot = el("div",{class:"idea-foot"});
+    var more = el("button",{class:"link-btn",type:"button","aria-expanded":"false","aria-controls":"idea-body-"+i},"Читать подробнее");
+    more.addEventListener("click", function(){ var open = body.hidden; body.hidden = !open; more.setAttribute("aria-expanded", String(open)); more.textContent = open ? "Свернуть" : "Читать подробнее"; });
+    foot.appendChild(more);
+    var star = el("button",{class:"star",type:"button","aria-pressed":S.stars[i]?"true":"false"});
+    star.innerHTML = STAR_SVG + "<span>"+(S.stars[i]?"Сохранено":"Сохранить")+"</span>";
+    star.addEventListener("click", function(){ S.stars[i] = !S.stars[i]; if(!S.stars[i]) delete S.stars[i]; star.setAttribute("aria-pressed", S.stars[i]?"true":"false"); star.querySelector("span").textContent = S.stars[i]?"Сохранено":"Сохранить"; save(); });
+    foot.appendChild(star);
+    card.appendChild(foot);
+    ideasBox.appendChild(card);
+  });
+
+  // questions
+  var qsBox = document.getElementById("qs");
+  function autosize(t){ if(!t.value){ t.style.height=""; return; } t.style.height="auto"; t.style.height = Math.max(64, t.scrollHeight+2)+"px"; }
+  QS.forEach(function(it, i){
+    var box = el("div",{class:"q"});
+    box.appendChild(el("span",{class:"num","aria-hidden":"true"},String(i+1)));
+    var lab = el("label",{for:"q"+i},it.q); box.appendChild(lab);
+    box.appendChild(el("p",{class:"hint"},it.h));
+    var ta = el("textarea",{id:"q"+i,rows:"2"}); ta.value = S.q[i]||"";
+    ta.addEventListener("input", function(){ var v=ta.value; if(v.trim()) S.q[i]=v; else delete S.q[i]; autosize(ta); updateProgress(); save(); });
+    box.appendChild(ta);
+    qsBox.appendChild(box);
+    setTimeout(function(){ autosize(ta); },0);
+  });
+  function updateProgress(){ var n=0; for(var i=0;i<QS.length;i++){ if(S.q[i] && S.q[i].trim()) n++; } document.getElementById("qCount").textContent = "Отвечено: "+n+" из "+QS.length; document.getElementById("qBar").style.width = (n/QS.length*100)+"%"; }
+  updateProgress();
+
+  // values
+  var OPTS=[["fear","Боюсь потерять","o-fear"],["want","Хочу и ценю","o-want"],["none","Неважно","o-none"]];
+  function allValues(){ return VALUES.concat(S.custom); }
+  function renderValues(){
+    var list=document.getElementById("vlist"); list.innerHTML="";
+    allValues().forEach(function(v, i){
+      var row=el("div",{class:"vrow"});
+      var name=el("div",{class:"vname",id:"vn"+i},v); row.appendChild(name);
+      var seg=el("div",{class:"seg",role:"radiogroup","aria-labelledby":"vn"+i});
+      OPTS.forEach(function(o){
+        var b=el("button",{type:"button",role:"radio",class:o[2],"aria-checked":S.val[v]===o[0]?"true":"false"},o[1]);
+        b.addEventListener("click",function(){ if(S.val[v]===o[0]) delete S.val[v]; else S.val[v]=o[0]; Array.prototype.forEach.call(seg.children,function(x,k){ x.setAttribute("aria-checked", S.val[v]===OPTS[k][0]?"true":"false"); }); save(); renderResult(); });
+        seg.appendChild(b);
+      });
+      row.appendChild(seg); list.appendChild(row);
+    });
+    renderResult();
+  }
+  function renderResult(){
+    var all=allValues(), fear=[], want=[], done=0;
+    all.forEach(function(v){ if(S.val[v]) done++; if(S.val[v]==="fear") fear.push(v); if(S.val[v]==="want") want.push(v); });
+    document.getElementById("vcount").textContent="Отмечено: "+done+" из "+all.length;
+    var show=done>=3; document.getElementById("vresult").hidden=!show;
+    if(!show) return;
+    document.getElementById("resFear").textContent = fear.length ? fear.join(", ") : "Пока ни одного пункта.";
+    document.getElementById("resWant").textContent = want.length ? want.join(", ") : "Пока ни одного пункта.";
+    var t;
+    if(!fear.length && !want.length) t="Вы отметили пункты как неважные. Подумайте, что тогда держит вас рядом с этим человеком, и допишите это своим пунктом.";
+    else if(fear.length>want.length) t="Сейчас больше пунктов связано со страхом потерять. Так бывает, когда отношения дают безопасность, а тепла в них становится меньше. Со страхом можно работать, и когда он слабеет, становится понятнее, что остается между вами.";
+    else if(want.length>fear.length) t="Больше пунктов связано с тем, что вам дорого. Посмотрите, получаете ли вы это сейчас или скучаете по тому, как было раньше. От ответа зависит, о чем стоит поговорить с партнером.";
+    else t="Страх потерять и желание быть вместе сейчас уравновешены. Посмотрите внимательнее на пункты, где выбор дался труднее всего: обычно именно там спрятано главное.";
+    document.getElementById("resText").textContent=t;
+  }
+  document.getElementById("addForm").addEventListener("submit", function(e){
+    e.preventDefault(); var inp=document.getElementById("addInput"); var v=inp.value.trim();
+    if(v && allValues().indexOf(v)===-1){ S.custom.push(v); save(); renderValues(); }
+    inp.value="";
+  });
+  renderValues();
+
+  // stress
+  var stressBox=document.getElementById("stress");
+  STRESS.forEach(function(s){
+    var b=el("button",{type:"button",class:"toggle","aria-pressed":S.stress[s]?"true":"false"},s);
+    b.addEventListener("click",function(){ if(S.stress[s]) delete S.stress[s]; else S.stress[s]=true; b.setAttribute("aria-pressed",S.stress[s]?"true":"false"); renderStress(); save(); });
+    stressBox.appendChild(b);
+  });
+  function renderStress(){
+    var n=Object.keys(S.stress).length, m=document.getElementById("stressMsg");
+    m.classList.toggle("on", n>0);
+    if(n===0) m.textContent="Отметьте все, что подходит. Ниже появится подсказка.";
+    else if(n<=2) m.textContent="В вашей жизни сейчас есть серьезная нагрузка. На ее фоне желание избавиться от партнера может становиться острее. Дайте себе время и проверьте, остается ли оно таким же в более спокойные дни.";
+    else m.textContent="На вас сейчас многое навалилось сразу. В таком состоянии психика ищет быстрые решения, которые обещают облегчение. Возможно, сначала стоит позаботиться о себе и найти поддержку, а к решению об отношениях вернуться, когда станет чуть легче.";
+  }
+  renderStress();
+
+  // exercises
+  Array.prototype.forEach.call(document.querySelectorAll("[data-ex]"), function(f){
+    var k=f.getAttribute("data-ex"); f.value=S.ex[k]||"";
+    f.addEventListener("input",function(){ if(f.value.trim()) S.ex[k]=f.value; else delete S.ex[k]; if(f.tagName==="TEXTAREA") autosize(f); save(); });
+    if(f.tagName==="TEXTAREA") setTimeout(function(){ autosize(f); },0);
+  });
+  var steps=document.getElementById("pairSteps");
+  PAIR.forEach(function(p,i){
+    var li=el("li"); li.appendChild(el("span",{class:"num","aria-hidden":"true"},String(i+1))); li.appendChild(el("span",null,p)); steps.appendChild(li);
+  });
+
+
+  // оживление: выделения, карточки, росток, прогресс чтения
+  var io = ("IntersectionObserver" in window) ? new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); } }); },{threshold:0.35}) : null;
+  function watch(n){ if(io) io.observe(n); else n.classList.add("on"); }
+  Array.prototype.forEach.call(document.querySelectorAll("mark,.idea,.sprout"), watch);
+  var rb=document.getElementById("readbar"), ticking=false;
+  function upd(){ var h=document.documentElement; var max=h.scrollHeight-window.innerHeight; rb.style.width=(max>0?Math.min(100,(window.scrollY/max)*100):0)+"%"; ticking=false; }
+  window.addEventListener("scroll",function(){ if(!ticking){ ticking=true; requestAnimationFrame(upd); } },{passive:true});
+  upd();
+
+  // notes
+  function compile(){
+    var out=[];
+    var st=Object.keys(S.stars).map(Number).sort(function(a,b){return a-b;});
+    if(st.length){ out.push("Мысли, которые откликнулись:"); st.forEach(function(i){ out.push("• "+IDEAS[i].t); }); out.push(""); }
+    var qa=[]; QS.forEach(function(it,i){ if(S.q[i]&&S.q[i].trim()){ qa.push(it.q); qa.push(S.q[i].trim()); qa.push(""); } });
+    if(qa.length){ out.push("Вопросы к себе:"); out=out.concat(qa); }
+    var h=[],w=[]; allValues().forEach(function(r){ if(S.val[r]==="fear") h.push(r); if(S.val[r]==="want") w.push(r); });
+    if(h.length||w.length){ out.push("Боюсь потерять: "+(h.join(", ")||"пока ничего")); out.push("Хочу и ценю: "+(w.join(", ")||"пока ничего")); out.push(""); }
+    var ss=Object.keys(S.stress); if(ss.length){ out.push("Что сейчас происходит в жизни: "+ss.join(", ")); out.push(""); }
+    var ex=[]; Object.keys(EX_LABELS).forEach(function(k){ if(S.ex[k]&&S.ex[k].trim()){ ex.push(EX_LABELS[k]+": "+S.ex[k].trim()); } });
+    if(ex.length){ out.push("Упражнения:"); out=out.concat(ex); out.push(""); }
+    return out.join("\n").trim();
+  }
+  function renderNotes(){
+    var t=compile(), box=document.getElementById("notes");
+    if(t){ box.textContent="Остаться или уйти. Мои записи\n\n"+t; box.classList.remove("empty"); }
+    else { box.textContent="Пока здесь пусто. Отметьте мысль звездочкой или ответьте на любой вопрос, и запись появится здесь."; box.classList.add("empty"); }
+  }
+  renderNotes();
+
+  var status=document.getElementById("status");
+  document.getElementById("copyBtn").addEventListener("click",function(){
+    var t=compile(); var fb=document.getElementById("copyFallback");
+    if(!t){ status.textContent="Пока копировать нечего: сначала сделайте хотя бы одну запись."; return; }
+    var full="Остаться или уйти. Мои записи\n\n"+t;
+    function fallback(){ fb.value=full; fb.hidden=false; fb.focus(); fb.select(); status.textContent="Текст выделен ниже: скопируйте его вручную и вставьте в заметки."; }
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(full).then(function(){ fb.hidden=true; status.textContent="Записи скопированы. Вставьте их в заметки, чтобы сохранить."; }, fallback);
+      } else fallback();
+    }catch(e){ fallback(); }
+  });
+  var clearBtn=document.getElementById("clearBtn"), armTimer=null;
+  clearBtn.addEventListener("click",function(){
+    if(!clearBtn.classList.contains("armed")){
+      clearBtn.classList.add("armed"); clearBtn.textContent="Нажмите еще раз, чтобы удалить";
+      armTimer=setTimeout(function(){ clearBtn.classList.remove("armed"); clearBtn.textContent="Очистить все"; },5000);
+      return;
+    }
+    clearTimeout(armTimer);
+    S={stars:{}, q:{}, val:{}, custom:[], stress:{}, ex:{}, pair:{}};
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    location.reload();
+  });
+})();
+</script>
+</body>
+</html>
